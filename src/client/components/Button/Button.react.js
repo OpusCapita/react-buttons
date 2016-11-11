@@ -24,6 +24,7 @@ class Button extends Component {
 
   render() {
     let {
+      altContent,
       bgColor,
       color,
       className,
@@ -32,10 +33,12 @@ class Button extends Component {
       disablePaddingCompensation,
       label,
       contentPosition,
+      paper,
       style,
       tabIndex,
       svg,
-      svgSize
+      svgSize,
+      ...restProps
     } = this.props;
 
     let paddingCompensationRule = (svg && !disablePaddingCompensation) ?
@@ -45,7 +48,6 @@ class Button extends Component {
     let buttonStyle = {
       backgroundColor: bgColor,
       color: color,
-      flexDirection: contentPosition === 'before' ? 'row-reverse' : 'row',
       ...paddingCompensationRule,
       ...style
     };
@@ -55,7 +57,10 @@ class Button extends Component {
     ) : null;
 
     let buttonChildren = (children || icon) ? (
-      <div className="button__children">
+      <div
+        className="button__children"
+        style={{ visibility: altContent ? 'hidden' : 'initial' }}
+      >
         {icon}
         {children}
       </div>
@@ -66,22 +71,36 @@ class Button extends Component {
     ) : null;
 
     return (
-      <div
-        className={`${className} button ${disabled ? 'button--disabled' : ''}`}
+      <button
+        { ...restProps }
+        className={`${className} button ${disabled ? 'button--disabled' : ''} ${paper ? 'button--paper' : '' }`}
         style={buttonStyle}
         tabIndex={disabled ? '-1' : tabIndex}
       >
-        <div className="button__label">
-          {label}
+        <div
+          className="button__content"
+          style={{ flexDirection: contentPosition === 'before' ? 'row-reverse' : 'row' }}
+        >
+          <div
+            className="button__label"
+            style={{
+              textAlign: contentPosition === 'before' ? 'right' : 'left',
+              visibility: altContent ? 'hidden' : 'initial'
+            }}
+          >
+            {label ? label : <div style={{ width: '0' }}>&nbsp;</div>}
+          </div>
+          {altContent || null}
+          {buttonDelimiter}
+          {buttonChildren}
         </div>
-        {buttonDelimiter}
-        {buttonChildren}
-      </div>
+      </button>
     );
   }
 }
 
 Button.propTypes = {
+  altContent: PropTypes.node,
   bgColor: PropTypes.string,
   color: PropTypes.string,
   className: PropTypes.string,
@@ -91,6 +110,7 @@ Button.propTypes = {
   contentPosition: PropTypes.oneOf(['before', 'after']),
   style: PropTypes.object,
   tabIndex: PropTypes.number,
+  paper: PropTypes.bool,
   svg: PropTypes.string,
   svgSize: PropTypes.string
 };
@@ -98,6 +118,7 @@ Button.defaultProps = {
   contentPosition: 'after',
   className: '',
   disablePaddingCompensation: false,
+  paper: false,
   svgSize: '1.4em',
   style: {},
   tabIndex: 0
