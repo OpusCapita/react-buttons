@@ -7,15 +7,6 @@
   }
 }
 
-@keyframes button-click {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 .button {
   align-items: center;
   border: none;
@@ -52,23 +43,13 @@
 }
 
 .button:focus > .button__content {
-  animation: button-focus-blinking 0.38s infinite ease-in-out alternate;
+  animation: button-focus-blinking 250ms infinite ease-in-out alternate;
 }
 
+.button:active > .button__content,
 .button:hover:focus > .button__content {
   animation: none;
 }
-
-//.button:focus:active::after,
-//.button:hover:focus:active::after {
-//  background-color: rgba(127, 127, 127, 0.24);
-//  content: '';
-//  height: 100%;
-//  left: 0;
-//  position: absolute;
-//  top: 0;
-//  z-index: 2;
-//}
 
 .button--disabled:hover::before,
 .button--disabled:focus::before,
@@ -100,7 +81,14 @@
 
 .button--paper {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.48);
+  transition: box-shadow 120ms ease-in-out;
 }
+
+.button--paper:focus:active:not(.button--disabled) {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
+  transition: box-shadow 80ms ease-in-out;
+}
+
 
 .button__label::selection {
     background-color: transparent;
