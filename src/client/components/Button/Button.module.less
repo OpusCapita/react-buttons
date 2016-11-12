@@ -1,11 +1,4 @@
-@keyframes button-focus-blinking {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.24;
-  }
-}
+@import 'Button.h.module.less';
 
 .button {
   align-items: center;
@@ -28,70 +21,20 @@
 }
 
 .button:hover::before {
-  background-color: rgba(255, 255, 255, 0.36);
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 2;
+  .overlay();
 }
 
 .button:hover:active::before {
-  background-color: rgba(0, 0, 0, 0.08);
+  content: initial;
 }
 
 .button:focus > .content {
-  animation: button-focus-blinking 250ms infinite ease-in-out alternate;
+  .blink(280ms);
 }
 
 .button:active > .content,
 .button:hover:focus > .content {
   animation: none;
-}
-
-.disabled:hover::before,
-.disabled:focus::before,
-.disabled:focus:active::before,
-.disabled::before {
-  content: initial;
-}
-
-.disabled::after,
-.disabled:focus:active::after,
-.disabled:hover:focus:active::after {
-  background-color: rgba(255, 255, 255, 0.48);
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 2;
-}
-
-.disabled:hover {
-  cursor: not-allowed;
-}
-
-.disabled:focus > .content {
-  animation: none;
-}
-
-.paper {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.48);
-  transition: box-shadow 120ms ease-in-out;
-}
-
-.paper:focus:active:not(.disabled) {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
-  transition: box-shadow 80ms ease-in-out;
-}
-
-
-.label::selection {
-    background-color: transparent;
 }
 
 .content {
@@ -105,4 +48,37 @@
 
 .delimiter {
   width: 0.4em;
+}
+
+.disabled:hover::before,
+.disabled:focus::before,
+.disabled:focus:active::before,
+.disabled::before {
+  content: initial;
+}
+
+.disabled::after,
+.disabled:focus:active::after,
+.disabled:hover:focus:active::after {
+  .overlay--disabled();
+}
+
+.disabled:hover {
+  cursor: not-allowed;
+}
+
+.disabled:focus > .content {
+  animation: none;
+}
+
+.label::selection {
+  background-color: transparent;
+}
+
+.paper {
+  .paper-shadow();
+}
+
+.paper:focus:active:not(.disabled) {
+  .paper-shadow--raised();
 }

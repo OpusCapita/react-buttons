@@ -70,7 +70,7 @@ module.exports = {
       {
         test: /\.(css|less)$/,
         loader: `style!css?modules&importLoaders=1&` +
-        `localIdentName=[name]-[local]__${packageVersion}_[hash:base64:3]` +
+        `localIdentName=[name]__[local]__${packageVersion}_[hash:base64:3]` +
         `!postcss-loader!less?sourceMap`,
         include: /\.module\.(css|less)$/
       },
