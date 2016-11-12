@@ -1,6 +1,7 @@
 'use strict';
 const path = require('path');
 const webpack = require('webpack');
+const packageVersion = require('./package.json').version;
 let host = require('./clientConfig').host;
 let port = require('./clientConfig').port;
 
@@ -67,12 +68,22 @@ module.exports = {
         loader: 'raw-loader'
       },
       {
-        test: /\.less$/,
-        loader: 'style!css!postcss-loader!less?sourceMap'
+        test: /\.(css|less)$/,
+        loader: `style!css?modules&importLoaders=1&` +
+          `localIdentName=[name]-[local]__${packageVersion}_[hash:base64:3]` +
+          `!postcss-loader!less?sourceMap`,
+        exclude: [
+          path.join(__dirname, 'node_modules'),
+          path.join(__dirname, 'external_modules'),
+        ]
       },
       {
-        test: /\.css$/,
-        loader: "style!css-loader!postcss-loader"
+        test: /\.(css|less)$/,
+        loader: `style!css!less?sourceMap`,
+        include: [
+          path.join(__dirname, 'node_modules'),
+          path.join(__dirname, 'external_modules')
+        ]
       },
       {
         test: /.jsx?$/,

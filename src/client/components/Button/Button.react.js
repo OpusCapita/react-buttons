@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import './Button.less';
+import s from './Button.less';
 import SVGIcon from 'jcatalog-react-ui-svg/lib/SVGIcon';
 
 export default
@@ -58,7 +58,7 @@ class Button extends Component {
 
     let buttonChildren = (children || icon) ? (
       <div
-        className="button__children"
+        className={s.children}
         style={{ visibility: altContent ? 'hidden' : 'initial' }}
       >
         {icon}
@@ -67,22 +67,22 @@ class Button extends Component {
     ) : null;
 
     let buttonDelimiter = (buttonChildren && label) ? (
-      <div className="button__delimiter"></div>
+      <div className={s.delimiter}></div>
     ) : null;
 
     return (
       <button
         { ...restProps }
-        className={`${className} button ${disabled ? 'button--disabled' : ''} ${paper ? 'button--paper' : '' }`}
+        className={`${className} ${s.button} ${disabled ? s.disabled : ''} ${paper ? s.paper : '' }`}
         style={buttonStyle}
         tabIndex={disabled ? '-1' : tabIndex}
       >
         <div
-          className="button__content"
+          className={s.content}
           style={{ flexDirection: contentPosition === 'before' ? 'row-reverse' : 'row' }}
         >
           <div
-            className="button__label"
+            className={s.label}
             style={{
               textAlign: contentPosition === 'before' ? 'right' : 'left',
               visibility: altContent ? 'hidden' : 'initial'

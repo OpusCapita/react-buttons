@@ -42,25 +42,25 @@
   background-color: rgba(0, 0, 0, 0.08);
 }
 
-.button:focus > .button__content {
+.button:focus > .content {
   animation: button-focus-blinking 250ms infinite ease-in-out alternate;
 }
 
-.button:active > .button__content,
-.button:hover:focus > .button__content {
+.button:active > .content,
+.button:hover:focus > .content {
   animation: none;
 }
 
-.button--disabled:hover::before,
-.button--disabled:focus::before,
-.button--disabled:focus:active::before,
-.button--disabled::before {
+.disabled:hover::before,
+.disabled:focus::before,
+.disabled:focus:active::before,
+.disabled::before {
   content: initial;
 }
 
-.button--disabled::after,
-.button--disabled:focus:active::after,
-.button--disabled:hover:focus:active::after {
+.disabled::after,
+.disabled:focus:active::after,
+.disabled:hover:focus:active::after {
   background-color: rgba(255, 255, 255, 0.48);
   content: '';
   height: 100%;
@@ -71,38 +71,38 @@
   z-index: 2;
 }
 
-.button--disabled:hover {
+.disabled:hover {
   cursor: not-allowed;
 }
 
-.button--disabled:focus > .button__content {
+.disabled:focus > .content {
   animation: none;
 }
 
-.button--paper {
+.paper {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.48);
   transition: box-shadow 120ms ease-in-out;
 }
 
-.button--paper:focus:active:not(.button--disabled) {
+.paper:focus:active:not(.disabled) {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
   transition: box-shadow 80ms ease-in-out;
 }
 
 
-.button__label::selection {
+.label::selection {
     background-color: transparent;
 }
 
-.button__content {
+.content {
   display: inline-flex;
 }
 
-.button__children {
+.children {
   align-items: center;
   display: inline-flex;
 }
 
-.button__delimiter {
+.delimiter {
   width: 0.4em;
 }
