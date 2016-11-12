@@ -70,20 +70,14 @@ module.exports = {
       {
         test: /\.(css|less)$/,
         loader: `style!css?modules&importLoaders=1&` +
-          `localIdentName=[name]-[local]__${packageVersion}_[hash:base64:3]` +
-          `!postcss-loader!less?sourceMap`,
-        exclude: [
-          path.join(__dirname, 'node_modules'),
-          path.join(__dirname, 'external_modules'),
-        ]
+        `localIdentName=[name]-[local]__${packageVersion}_[hash:base64:3]` +
+        `!postcss-loader!less?sourceMap`,
+        include: /\.module\.(css|less)$/
       },
       {
         test: /\.(css|less)$/,
-        loader: `style!css!less?sourceMap`,
-        include: [
-          path.join(__dirname, 'node_modules'),
-          path.join(__dirname, 'external_modules')
-        ]
+        loader: `style!css!postcss-loader!less?sourceMap`,
+        exclude: /\.module\.(css|less)$/
       },
       {
         test: /.jsx?$/,

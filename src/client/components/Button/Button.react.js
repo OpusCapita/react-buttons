@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import s from './Button.less';
+import s from './Button.module.less';
 import SVGIcon from 'jcatalog-react-ui-svg/lib/SVGIcon';
 
 export default
