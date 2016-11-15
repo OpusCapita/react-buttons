@@ -90,10 +90,10 @@ class Button extends Component {
           >
             {label ? label : <div style={{ width: '0' }}>&nbsp;</div>}
           </div>
-          {altContent || null}
           {buttonDelimiter}
           {buttonChildren}
         </div>
+        {(altContent && <div className={s.altContent}>{altContent}</div>) || null}
       </button>
     );
   }
@@ -114,6 +114,7 @@ Button.propTypes = {
   svg: PropTypes.string,
   svgSize: PropTypes.string
 };
+
 Button.defaultProps = {
   contentPosition: 'after',
   className: '',

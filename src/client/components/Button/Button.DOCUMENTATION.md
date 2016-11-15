@@ -6,7 +6,7 @@ Button react component
 
 | Name                          | Type                  | Description                                                |
 | ------------------------------|:----------------------| -----------------------------------------------------------|
-| altContent | node | Use it for temporary substitution of content if you want to save original button sizes. Useful for in-button spinners |
+| altContent | node | Use it for temporary substitution of content if you want to save original button sizes. Useful for in-button spinners. Size **must** be smaller or equals original content |
 | bgColor | string | Background color. Icon inherit this property |
 | color | string | Text color. Icon inherit as **svg fill** |
 | className | string | Default behaviour |
@@ -19,128 +19,54 @@ Button react component
 | svg | string | **svg** element string representation. Using as icon. Example: `<svg viewBox="0 0 120 120" version="1.1"><circle cx="60" cy="60" r="50"/></svg>` |
 | svgSize | string | Size of the svg icon. Example: `48px` |
 
+### Tips
+* IE has a problem with key-navigation by `TAB` key. It take focus on `<svg>` element. Fix: `<svg focusable="false">`. We recommend use carefully prepared `jcatalog-svg-icons` package.
+
 ### Code Example
 
 ```
-<h5>Horizontal flat</h5>
 <div style={{ display: 'flex', flexWrap: 'wrap', marginBottom: '24px' }}>
-  <Button onClick={() => {'Cancel button click!'}} label="Cancel" />
-  <Button color="#fff" bgColor="#e70" label="Apply" />
-  <Button label="Disabled" disabled={true} />
-  <Button svg={_scope.getIcon('shopping_cart')} />
-  <Button
-    bgColor="#66bb6a"
-    color="#fff"
-    svg={_scope.getIcon('shopping_cart')}
-    svgSize="48px"
+  <Button 
+    onClick={() => console.log('Cancel button click!')}
+    label="Cancel" paper={_scope.state.options.isPaper}
   />
-  <Button label="Icon button" svg={_scope.getIcon('build')} />
+  <Button 
+    color="#fff" 
+    bgColor="#e70" 
+    label="Apply" 
+    paper={_scope.state.options.isPaper} 
+  />
+  <Button 
+    label="Disabled"
+    disabled={true}
+    paper={_scope.state.options.isPaper}
+  />
+  <Button 
+    svg={_scope.getIcon('shopping_cart')}
+    paper={_scope.state.options.isPaper} 
+  />
+  <Button 
+    label="Icon button"
+    svg={_scope.getIcon('build')}
+    paper={_scope.state.options.isPaper}
+  />
   <Button
     bgColor="#333"
     color="#fff"
     contentPosition="before"
     label="Icon button"
     svg={_scope.getIcon('add_circle')}
+    paper={_scope.state.options.isPaper}
   />
 </div>
 
-<h5>Vertical flat full-width</h5>
-<div style={{ display: 'flex', flexDirection: 'column', marginBottom: '24px' }}>
-  <Button onClick={() => {'Cancel button click!'}} label="Cancel" />
-  <Button color="#fff" bgColor="#e70" label="Apply" />
-  <Button label="Disabled" disabled={true} />
-  <Button svg={_scope.getIcon('shopping_cart')} />
-  <Button
-    bgColor="#66bb6a"
-    color="#fff"
-    svg={_scope.getIcon('shopping_cart')}
-    svgSize="48px"
-  />
-  <Button label="Icon button" svg={_scope.getIcon('build')} />
-  <Button
-    bgColor="#333"
-    color="#fff"
-    contentPosition="before"
-    label="Icon button"
-    svg={_scope.getIcon('add_circle')}
-  />
-</div>
-
-<h5>Horizontal paper</h5>
-<div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', marginBottom: '24px' }}>
-  <div style={{ display: 'inline-flex', margin: '8px' }}>
-    <Button onClick={() => {'Cancel button click!'}} label="Cancel" paper={true} />
-  </div>
-  <div style={{ display: 'inline-flex', margin: '8px' }}>
-    <Button color="#fff" bgColor="#e70" label="Apply" paper={true} />
-  </div>
-  <div style={{ display: 'inline-flex', margin: '8px' }}>
-    <Button label="Disabled" disabled={true} paper={true} />
-  </div>
-  <div style={{ display: 'inline-flex', margin: '8px' }}>
-    <Button svg={_scope.getIcon('shopping_cart')} paper={true} />
-  </div>
-  <div style={{ display: 'inline-flex', margin: '8px' }}>
-    <Button
-      bgColor="#66bb6a"
-      color="#fff"
-      svg={_scope.getIcon('shopping_cart')}
-      svgSize="48px"
-      paper={true}
-    />
-  </div>
-  <div style={{ display: 'inline-flex', margin: '8px' }}>
-    <Button label="Icon button" svg={_scope.getIcon('build')} paper={true} />
-  </div>
-  <div style={{ display: 'inline-flex', margin: '8px' }}>
-    <Button
-      bgColor="#333"
-      color="#fff"
-      contentPosition="before"
-      label="Icon button"
-      svg={_scope.getIcon('add_circle')}
-      paper={true}
-    />
-  </div>
-</div>
-
-<h5>Vertical paper</h5>
-<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginBottom: '24px' }}>
-  <div style={{ display: 'inline-flex', margin: '8px' }}>
-    <Button onClick={() => {'Cancel button click!'}} label="Cancel" paper={true} />
-  </div>
-  <div style={{ display: 'inline-flex', margin: '8px' }}>
-    <Button color="#fff" bgColor="#e70" label="Apply" paper={true} />
-  </div>
-  <div style={{ display: 'inline-flex', margin: '8px' }}>
-    <Button label="Disabled" disabled={true} paper={true} />
-  </div>
-  <div style={{ display: 'inline-flex', margin: '8px' }}>
-    <Button svg={_scope.getIcon('shopping_cart')} paper={true} />
-  </div>
-  <div style={{ display: 'inline-flex', margin: '8px' }}>
-    <Button
-      bgColor="#66bb6a"
-      color="#fff"
-      svg={_scope.getIcon('shopping_cart')}
-      svgSize="48px"
-      paper={true}
-    />
-  </div>
-  <div style={{ display: 'inline-flex', margin: '8px' }}>
-    <Button label="Icon button" svg={_scope.getIcon('build')} paper={true}/>
-  </div>
-  <div style={{ display: 'inline-flex', margin: '8px' }}>
-    <Button
-      bgColor="#333"
-      color="#fff"
-      contentPosition="before"
-      label="Icon button"
-      svg={_scope.getIcon('add_circle')}
-      paper={true}
-    />
-  </div>
-</div>
+<Button
+  bgColor="#66bb6a"
+  color="#fff"
+  svg={_scope.getIcon('shopping_cart')}
+  svgSize="48px"
+  paper={_scope.state.options.isPaper}
+/>
 ```
 
 ### Contributors

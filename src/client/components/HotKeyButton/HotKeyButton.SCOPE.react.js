@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { showroomScopeDecorator } from 'jcatalog-showroom';
-import Button from './Button.react';
+import HotKeyButton from './HotKeyButton.react';
 
 function requireAll(requireContext) {
   return requireContext.keys().map(key => ({
@@ -12,7 +12,7 @@ function requireAll(requireContext) {
 let icons = requireAll(require.context( '!!raw-loader!jcatalog-svg-icons/lib', true, /.*\.svg$/));
 
 @showroomScopeDecorator
-class ButtonSCOPE extends Component {
+class HotKeyButtonSCOPE extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,7 +38,7 @@ class ButtonSCOPE extends Component {
     return (
       <div>
         <div style={{ marginBottom: '24px' }}>
-          <Button
+          <HotKeyButton
             altContent={this.state.options.isPaper ? (
               <div style={{ display: 'flex', alignText: 'center', alignItems: 'center' }}>
                 Disable Paper
@@ -56,4 +56,4 @@ class ButtonSCOPE extends Component {
   }
 }
 
-export default ButtonSCOPE;
+export default HotKeyButtonSCOPE;
