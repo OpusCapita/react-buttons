@@ -43,15 +43,16 @@ class HotKeyButton extends Component {
   }
 
   handleKeyDown(event) {
-    let isTipKeyPressed = this.props.tipKeys.some(tipKey => tipKey === event.code);
+    let isTipKeyPressed = this.props.tipsHotKeys.some(tipHotKey => this.isHotKeyPressed(tipHotKey, event));
     if(isTipKeyPressed) {
+      event.stopPropagation();
+      event.preventDefault();
       this.setState({ isTipKeyPressed: true });
     }
   }
 
   handleKeyUp(event) {
-    let isTipKeyUnpressed = this.props.tipKeys.some(tipKey => tipKey === event.code);
-    if(isTipKeyUnpressed) {
+    if(this.state.isTipKeyPressed) {
       this.setState({ isTipKeyPressed: false });
     }
   }
@@ -80,7 +81,10 @@ class HotKeyButton extends Component {
 
   handleEvent(event) {
     let anyHotKeyPressed = this.props.hotKeys.some(hotKey => this.isHotKeyPressed(hotKey, event));
-    console.log('p', anyHotKeyPressed, event);
+    if(anyHotKeyPressed) {
+      this.props.onClick && this.props.onClick();
+      this.props.action && this.props.action();
+    }
   }
 
   render() {
@@ -136,7 +140,7 @@ HotKeyButton.propTypes = {
   hotKeys: PropTypes.arrayOf(PropTypes.string),
   targets: PropTypes.arrayOf(PropTypes.object),
   targetsExcluded: PropTypes.arrayOf(PropTypes.object),
-  tipKeys: PropTypes.arrayOf(PropTypes.string)
+  tipsHotKeys: PropTypes.arrayOf(PropTypes.string)
 };
 
 HotKeyButton.defaultProps = {
@@ -145,5 +149,5 @@ HotKeyButton.defaultProps = {
   hotKeys: [],
   targets: [ window ],
   targetsExcluded: [],
-  tipKeys: ['ControlLeft', 'OSLeft', 'ControlRight', 'OSRight']
+  tipsHotKeys: ['Ctrl + h']
 };

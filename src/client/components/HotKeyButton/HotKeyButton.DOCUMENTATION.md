@@ -42,7 +42,7 @@ In **IE** it looks normally, but hot keys behaviour is not supported.
     title="Show cart"
     svg={_scope.getIcon('shopping_cart')}
     paper={_scope.state.options.isPaper} 
-    hotKeys={['Ctrl + G', 'Alt + G']}
+    hotKeys={['Alt + G']}
   />
   <HotKeyButton
     bgColor="#66bb6a"
