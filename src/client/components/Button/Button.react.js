@@ -120,7 +120,7 @@ Button.defaultProps = {
   className: '',
   disablePaddingCompensation: false,
   paper: false,
-  svgSize: '48px',
+  svgSize: '24px',
   style: {},
   tabIndex: 0
 };
