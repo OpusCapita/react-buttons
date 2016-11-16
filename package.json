@@ -64,6 +64,6 @@
     "write-file-webpack-plugin": "^3.3.0"
   },
   "dependencies": {
-    "jcatalog-react-ui-svg": "^0.0.9"
+    "jcatalog-react-ui-svg": "^0.0.11"
   }
 }

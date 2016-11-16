@@ -10,10 +10,10 @@ In **IE** it looks normally, but hot keys behaviour is not supported.
 | Name                          | Type                  | Description                                                |
 | ------------------------------|:----------------------| -----------------------------------------------------------|
 | action | func | Callback fired on button press or hotkey press |
-| eventType | oneOf(['keypress', 'keydown', 'keyup']) | Key event type when action fired. By default: `keyup` |
-| hotKeys | arrayOf(string) | **Syntax:** `Key` or `Modifier+Key`. **Modifiers:** `Ctrl`,`Alt`. **Keys:** any non-modifier key. Chord sequences not supported. <kbd>Option</kbd> key on OSX equals <kbd>Alt</kbd> key on PC |
-| **TODO targets** | arrayOf(DOMNode) | **Syntax:** `Key` or `Modifier+Key`. **Modifiers:** `Ctrl`,`Alt`. **Keys:** any non-modifier key. Chord sequences not supported. <kbd>Option</kbd> key on OSX equals <kbd>Alt</kbd> key on PC |
-| **TODO targetsExcluded** | arrayOf(DOMNode) | **Syntax:** `Key` or `Modifier + Key`. **Modifiers:** `Ctrl`,`Alt`. **Keys:** any non-modifier key. Chord sequences not supported. <kbd>Option</kbd> key on OSX equals <kbd>Alt</kbd> key on PC |
+| eventType | oneOf(['keypress', 'keydown', 'keyup']) | Key event type when action fired. By default: `keydown` |
+| hotKeys | arrayOf(string) | **Syntax:** `Key` or `Modifier+Key`. **Modifiers:** `Control`,`Alt`. **Keys:** any non-modifier key. Chord sequences not supported. <kbd>Option</kbd> key on OSX equals <kbd>Alt</kbd> key on PC |
+| **TODO targets** | arrayOf(DOMNode) | **Syntax:** `Key` or `Modifier+Key`. **Modifiers:** `Control`,`Alt`. **Keys:** any non-modifier key. Chord sequences not supported. <kbd>Option</kbd> key on OSX equals <kbd>Alt</kbd> key on PC |
+| **TODO targetsExcluded** | arrayOf(DOMNode) | **Syntax:** `Key` or `Modifier + Key`. **Modifiers:** `Control`,`Alt`. **Keys:** any non-modifier key. Chord sequences not supported. <kbd>Option</kbd> key on OSX equals <kbd>Alt</kbd> key on PC |
 | tipKeys | arrayOf(string) | Array of <kbd>key</kbd> codes, pressing on which, hot-key tip appeared. List of codes see here: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code . By default: `ControlLeft, ControlRight, OSLeft, OSRight` |
 
 ### Code Example
@@ -31,7 +31,7 @@ In **IE** it looks normally, but hot keys behaviour is not supported.
     bgColor="#e70" 
     label="Save" 
     paper={_scope.state.options.isPaper} 
-    hotKeys={['Ctrl + S']}
+    hotKeys={['Control + s']}
   />
   <HotKeyButton 
     label="Disabled"
@@ -42,7 +42,7 @@ In **IE** it looks normally, but hot keys behaviour is not supported.
     title="Show cart"
     svg={_scope.getIcon('shopping_cart')}
     paper={_scope.state.options.isPaper} 
-    hotKeys={['Alt + G']}
+    hotKeys={['Alt + g']}
   />
   <HotKeyButton
     bgColor="#66bb6a"
@@ -55,13 +55,13 @@ In **IE** it looks normally, but hot keys behaviour is not supported.
     label="Find Products"
     svg={_scope.getIcon('search')}
     paper={_scope.state.options.isPaper}
-    hotKeys={['Ctrl + Shift + F', 'Ctrl + /']}
+    hotKeys={['Control + Shift + f', 'Control + /']}
   />
   <HotKeyButton
     bgColor="#333"
     color="#fff"
     contentPosition="before"
-    hotKeys={['Ctrl + S']}
+    hotKeys={['Control + s + n']}
     label="Icon button"
     svg={_scope.getIcon('add_circle')}
     paper={_scope.state.options.isPaper}
@@ -74,28 +74,28 @@ In **IE** it looks normally, but hot keys behaviour is not supported.
     svg={_scope.getIcon('format_align_left')}
     svgSize="24px"
     paper={_scope.state.options.isPaper} 
-    hotKeys={['Ctrl + Shift + L']}
+    hotKeys={['Control + Shift + l']}
   />
   <HotKeyButton
     title="Align center"
     svg={_scope.getIcon('format_align_center')}
     svgSize="24px"
     paper={_scope.state.options.isPaper} 
-    hotKeys={['Ctrl + Shift + E']}
+    hotKeys={['Control + Shift + e']}
   />
   <HotKeyButton
     title="Align right"
     svg={_scope.getIcon('format_align_right')}
     svgSize="24px"
     paper={_scope.state.options.isPaper} 
-    hotKeys={['Ctrl + Shift + R']}
+    hotKeys={['Control + Shift + r']}
   />
   <HotKeyButton
     title="Justify content"
     svg={_scope.getIcon('format_align_justify')}
     svgSize="24px"
     paper={_scope.state.options.isPaper} 
-    hotKeys={['Ctrl + Shift + J']}
+    hotKeys={['Control + Shift + j']}
   />
 </div>
 ``` 

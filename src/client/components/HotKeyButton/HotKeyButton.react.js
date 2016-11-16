@@ -9,7 +9,8 @@ class HotKeyButton extends Component {
     super(props);
     this.state = {
       isTipKeyPressed: false,
-      isHovered: false
+      isHovered: false,
+      keysPressed: []
     };
     this.handleEvent = this.handleEvent.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -42,33 +43,57 @@ class HotKeyButton extends Component {
     });
   }
 
+  normalizeKey(key) {
+    let isSingleCharacterKey = key.length === 1;
+    return isSingleCharacterKey ? key.toUpperCase() : key;
+  }
+
   handleKeyDown(event) {
-    let isTipKeyPressed = this.props.tipsHotKeys.some(tipHotKey => this.isHotKeyPressed(tipHotKey, event));
+    let { keysPressed } = this.state;
+    let key = event.key;
+    let normalizedKey = this.normalizeKey(key);
+    let isAlreadyPressed = keysPressed.find(key => key === normalizedKey);
+    let nextKeysPressed = [];
+    if(!isAlreadyPressed) {
+      nextKeysPressed = keysPressed.concat([normalizedKey]);
+      this.setState({ keysPressed: nextKeysPressed });
+    }
+    let isTipKeyPressed = this.props.tipsHotKeys.some(tipHotKey => this.isHotKeyPressed(tipHotKey, keysPressed));
+    // let isHotKeyPressed = this.props.hotKeys.some(hotKey => this.isHotKeyPressed(hotKey, keysPressed));
+
+    console.log(isTipKeyPressed)
     if(isTipKeyPressed) {
-      event.stopPropagation();
-      event.preventDefault();
       this.setState({ isTipKeyPressed: true });
     }
+    // if(isHotKeyPressed || isTipKeyPressed) {
+    //   event.stopPropagation();
+    //   event.preventDefault();
+    // }
   }
 
   handleKeyUp(event) {
-    if(this.state.isTipKeyPressed) {
-      this.setState({ isTipKeyPressed: false });
+    let { keysPressed } = this.state;
+    let key = event.key;
+    let normalizedKey = this.normalizeKey(key);
+    let indexOfPressedKey = keysPressed.indexOf(normalizedKey);
+    let isAlreadyPressed = indexOfPressedKey !== -1;
+    let nextKeysPressed = [];
+    if(isAlreadyPressed) {
+      nextKeysPressed = []
+        .concat(keysPressed.slice(0, indexOfPressedKey))
+        .concat(keysPressed.slice(indexOfPressedKey + 1, keysPressed.length));
+      this.setState({ keysPressed: nextKeysPressed });
     }
   }
 
-  isHotKeyPressed(hotKey, keyboardEvent) {
+  isHotKeyPressed(hotKey, keysPressed) {
+    console.log(hotKey, keysPressed);
     let splittedHotKey = hotKey.split(' + ');
-    let parsedHotKey = {
-      modifier: splittedHotKey.length === 2 ? splittedHotKey[0] : null,
-      key: splittedHotKey.length === 2 ? splittedHotKey[1] : splittedHotKey[0]
-    }
-    let isModifierKeyPressed = parsedHotKey.modifier ?
-      keyboardEvent[`${parsedHotKey.modifier.toLowerCase()}Key`] :
-      true;
-    let isKeyPressed = keyboardEvent.key === parsedHotKey.key;
-    let result = isModifierKeyPressed && isKeyPressed;
-    return result;
+    console.log('norm', splittedHotKey.map(key => this.normalizeKey(key)))
+    console.log('norm2', keysPressed.map(key => this.normalizeKey(key)))
+    return splittedHotKey.every(splittedPart =>
+        keysPressed.some(keyPressed => this.normalizeKey(keyPressed) === this.normalizeKey(splittedPart))
+    );
   }
 
   handleMouseEnter() {
@@ -80,11 +105,17 @@ class HotKeyButton extends Component {
   }
 
   handleEvent(event) {
-    let anyHotKeyPressed = this.props.hotKeys.some(hotKey => this.isHotKeyPressed(hotKey, event));
+    let anyHotKeyPressed = this.props.hotKeys.some(hotKey => this.isHotKeyPressed(hotKey, this.state.keysPressed));
     if(anyHotKeyPressed) {
+      event.stopPropagation();
+      event.preventDefault();
       this.props.onClick && this.props.onClick();
       this.props.action && this.props.action();
     }
+  }
+
+  capitalizeHotKey(hotKey) {
+    return hotKey.replace(/\b\w/g, l => l.toUpperCase());
   }
 
   render() {
@@ -97,7 +128,7 @@ class HotKeyButton extends Component {
         <div className={s.tips}>
           { hotKeys.map((hotKey, index) => (
             <div className={s.tip} key={index}>
-              <HotKeyLabel label={hotKey} />
+              <HotKeyLabel label={this.capitalizeHotKey(hotKey)} />
             </div>
           ))}
         </div>
@@ -105,7 +136,10 @@ class HotKeyButton extends Component {
     }
 
     if(isHovered && title && !isTipKeyPressed) {
-      let hotKeysLabels = this.props.hotKeys.reduce((result, hotKey) => hotKey.concat(result), '');
+      let hotKeysLabels = this.props.hotKeys.reduce(
+        (result, hotKey) => this.capitalizeHotKey(hotKey).concat(result),
+        ''
+      );
       let label = `${title}${hotKeysLabels ? ` (${hotKeysLabels})` : ''}`;
       tips = (
         <div className={s.tips}>
@@ -135,19 +169,18 @@ class HotKeyButton extends Component {
 }
 
 HotKeyButton.propTypes = {
-  action: PropTypes.func,
   eventType: PropTypes.oneOf(['keypress', 'keydown', 'keyup']),
   hotKeys: PropTypes.arrayOf(PropTypes.string),
-  targets: PropTypes.arrayOf(PropTypes.object),
-  targetsExcluded: PropTypes.arrayOf(PropTypes.object),
-  tipsHotKeys: PropTypes.arrayOf(PropTypes.string)
+  contexts: PropTypes.arrayOf(PropTypes.object),
+  excludeSubcontexts: PropTypes.arrayOf(PropTypes.object),
+  showTips: PropTypes.bool
 };
 
 HotKeyButton.defaultProps = {
   action: () => {},
-  eventType: 'keyup',
+  eventType: 'keydown',
   hotKeys: [],
   targets: [ window ],
   targetsExcluded: [],
-  tipsHotKeys: ['Ctrl + h']
+  tipsHotKeys: ['Control + b']
 };
