@@ -61,7 +61,6 @@ class HotKeyButton extends Component {
     let isTipKeyPressed = this.props.tipsHotKeys.some(tipHotKey => this.isHotKeyPressed(tipHotKey, keysPressed));
     // let isHotKeyPressed = this.props.hotKeys.some(hotKey => this.isHotKeyPressed(hotKey, keysPressed));
 
-    console.log(isTipKeyPressed)
     if(isTipKeyPressed) {
       this.setState({ isTipKeyPressed: true });
     }
@@ -87,10 +86,7 @@ class HotKeyButton extends Component {
   }
 
   isHotKeyPressed(hotKey, keysPressed) {
-    console.log(hotKey, keysPressed);
     let splittedHotKey = hotKey.split(' + ');
-    console.log('norm', splittedHotKey.map(key => this.normalizeKey(key)))
-    console.log('norm2', keysPressed.map(key => this.normalizeKey(key)))
     return splittedHotKey.every(splittedPart =>
         keysPressed.some(keyPressed => this.normalizeKey(keyPressed) === this.normalizeKey(splittedPart))
     );

@@ -6,6 +6,7 @@ Button react component
 
 | Name                          | Type                  | Description                                                |
 | ------------------------------|:----------------------| -----------------------------------------------------------|
+| active | bool | Emulate checkbox behaviour. Useful on toolbars with icons |
 | altContent | node | Use it for temporary substitution of content if you want to save original button sizes. Useful for in-button spinners. Size **must** be smaller or equals original content |
 | bgColor | string | Background color. Icon inherit this property |
 | color | string | Text color. Icon inherit as **svg fill** |
