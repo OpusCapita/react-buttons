@@ -24,6 +24,7 @@ class Button extends Component {
 
   render() {
     let {
+      active,
       altContent,
       bgColor,
       color,
@@ -73,7 +74,7 @@ class Button extends Component {
     return (
       <button
         { ...restProps }
-        className={`${className} ${s.button} ${disabled ? s.disabled : ''} ${paper ? s.paper : '' }`}
+        className={`${className} ${s.button} ${disabled ? s.disabled : ''} ${paper ? s.paper : '' } ${active ? s['button--active'] : ''}`}
         style={buttonStyle}
         tabIndex={disabled ? '-1' : tabIndex}
       >
