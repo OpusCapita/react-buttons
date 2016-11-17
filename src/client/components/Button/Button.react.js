@@ -100,6 +100,7 @@ class Button extends Component {
 }
 
 Button.propTypes = {
+  active: PropTypes.bool,
   altContent: PropTypes.node,
   bgColor: PropTypes.string,
   color: PropTypes.string,

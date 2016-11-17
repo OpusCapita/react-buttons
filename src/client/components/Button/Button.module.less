@@ -14,7 +14,6 @@
 .button {
   align-items: center;
   border: none;
-  border-radius: 2px;
   background-color: #fff;
   text-transform: uppercase;
   display: inline-flex;
@@ -40,8 +39,16 @@
   content: initial;
 }
 
-.button:focus > .content {
-  .blink(280ms);
+.button:focus {
+  box-shadow: inset 0 0 8px rgba(127, 127, 127, 0.28), inset 0 0 2px rgba(127, 127, 127, 0.64);
+}
+
+.button:focus::after {
+  .overlay();
+}
+
+.button:active::after {
+  .overlay--active();
 }
 
 .button:active > .content,
@@ -93,5 +100,5 @@
 }
 
 .paper:focus:active:not(.disabled) {
-  .paper-shadow--raised();
+  .paper--active();
 }

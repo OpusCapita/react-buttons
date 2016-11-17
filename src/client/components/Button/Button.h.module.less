@@ -1,7 +1,3 @@
-.blink(@freq) {
-  animation: focus-blinking @freq infinite ease-in-out alternate;
-}
-
 .overlay() {
   background-color: rgba(255, 255, 255, 0.36);
   content: '';
@@ -18,18 +14,17 @@
   background-color: rgba(255, 255, 255, 0.64);
 }
 
+.overlay--active() {
+  .overlay();
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
 .paper-shadow() {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.38);
   transition: box-shadow 80ms ease-in-out;
 }
 
-.paper-shadow--raised() {
+.paper--active() {
   .paper-shadow();
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.48);
 }
-
-@keyframes focus-blinking {
-  0% { opacity: 1; }
-  100% { opacity: 0.24; }
-}
-
