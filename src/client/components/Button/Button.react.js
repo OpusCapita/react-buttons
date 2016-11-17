@@ -17,7 +17,7 @@ class Button extends Component {
       return { paddingRight: '8px' };
     }
     if(svg && !label && !children) {
-      return { paddingLeft: '8px', paddingRight: '8px' }
+      return { paddingLeft: '4px', paddingRight: '4px' }
     }
     return {};
   }
