@@ -1,5 +1,5 @@
 .overlay() {
-  background-color: rgba(255, 255, 255, 0.36);
+  background-color: rgba(255, 255, 255, 1);
   content: '';
   height: 100%;
   left: 0;
@@ -9,12 +9,17 @@
   z-index: 2;
 }
 
-.overlay--disabled() {
+.overlay--light() {
+  .overlay();
+  background-color: rgba(255, 255, 255, 0.36);
+}
+
+.overlay--lighten() {
   .overlay();
   background-color: rgba(255, 255, 255, 0.64);
 }
 
-.overlay--active() {
+.overlay--dark() {
   .overlay();
   background-color: rgba(0, 0, 0, 0.08);
 }
@@ -22,9 +27,4 @@
 .paper-shadow() {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.38);
   transition: box-shadow 80ms ease-in-out;
-}
-
-.paper--active() {
-  .paper-shadow();
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.48);
 }
