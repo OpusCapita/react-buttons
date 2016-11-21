@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import s from './ButtonLabel.module.less';
 
 export default
-class HotKeyLabel extends Component {
+class ButtonLabel extends Component {
   render() {
     let { bgColor, className, color, label, style, ...restProps } = this.props;
     let styles = {
@@ -13,7 +13,7 @@ class HotKeyLabel extends Component {
     return (
       <div
         { ...restProps }
-        className={s.hotKeyLabel}
+        className={s.buttonLabel}
         style={styles}
       >
         {label}

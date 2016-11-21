@@ -1,7 +1,6 @@
 ### Synopsis
 
-HotKeyButton. 
-In **IE** it looks normally, but hot keys behaviour is not supported.
+A wrapper around **Button** component. Adde
 
 ### Props Reference
 
@@ -9,23 +8,18 @@ In **IE** it looks normally, but hot keys behaviour is not supported.
 
 | Name                          | Type                  | Description                                                |
 | ------------------------------|:----------------------| -----------------------------------------------------------|
-| action | func | Callback fired on button press or hotkey press |
-| eventType | oneOf(['keypress', 'keydown', 'keyup']) | Key event type when action fired. By default: `keydown` |
-| hotKeys | arrayOf(string) | **Syntax:** `Key` or `Modifier+Key`. **Modifiers:** `Control`,`Alt`. **Keys:** any non-modifier key. Chord sequences not supported. <kbd>Option</kbd> key on OSX equals <kbd>Alt</kbd> key on PC |
-| **TODO targets** | arrayOf(DOMNode) | **Syntax:** `Key` or `Modifier+Key`. **Modifiers:** `Control`,`Alt`. **Keys:** any non-modifier key. Chord sequences not supported. <kbd>Option</kbd> key on OSX equals <kbd>Alt</kbd> key on PC |
-| **TODO targetsExcluded** | arrayOf(DOMNode) | **Syntax:** `Key` or `Modifier + Key`. **Modifiers:** `Control`,`Alt`. **Keys:** any non-modifier key. Chord sequences not supported. <kbd>Option</kbd> key on OSX equals <kbd>Alt</kbd> key on PC |
-| tipKeys | arrayOf(string) | Array of <kbd>key</kbd> codes, pressing on which, hot-key tip appeared. List of codes see here: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code . By default: `ControlLeft, ControlRight, OSLeft, OSRight` |
+| title | string | title |
 
 ### Code Example
 
 ```
 <div style={{ display: 'flex', flexWrap: 'wrap', marginBottom: '24px' }}>
-  <HotKeyButton 
+  <TitledButton 
     onClick={() => console.log('Cancel button click!')}
     label="Cancel" paper={_scope.state.options.isPaper}
     hotKeys={['Escape']}
   />
-  <HotKeyButton 
+  <TitledButton 
     action={() => console.log('Save fired!')}
     color="#fff" 
     bgColor="#e70" 
@@ -33,31 +27,31 @@ In **IE** it looks normally, but hot keys behaviour is not supported.
     paper={_scope.state.options.isPaper} 
     hotKeys={['Control + s']}
   />
-  <HotKeyButton 
+  <TitledButton 
     label="Disabled"
     disabled={true}
     paper={_scope.state.options.isPaper}
   />
-  <HotKeyButton 
+  <TitledButton 
     title="Show cart"
     svg={_scope.getIcon('shopping_cart')}
     paper={_scope.state.options.isPaper} 
     hotKeys={['Alt + g']}
   />
-  <HotKeyButton
+  <TitledButton
     bgColor="#66bb6a"
     color="#fff"
     label="Make Order"
     svg={_scope.getIcon('shopping_cart')}
     paper={_scope.state.options.isPaper}
   />
-  <HotKeyButton 
+  <TitledButton 
     label="Find Products"
     svg={_scope.getIcon('search')}
     paper={_scope.state.options.isPaper}
     hotKeys={['Control + Shift + f', 'Control + /']}
   />
-  <HotKeyButton
+  <TitledButton
     bgColor="#333"
     color="#fff"
     contentPosition="before"
@@ -69,28 +63,28 @@ In **IE** it looks normally, but hot keys behaviour is not supported.
 </div>
 
 <div style={{ display: 'flex', flexWrap: 'wrap', marginBottom: '24px' }}>
-  <HotKeyButton
+  <TitledButton
     title="Align left"
     svg={_scope.getIcon('format_align_left')}
     svgSize="24px"
     paper={_scope.state.options.isPaper} 
     hotKeys={['Control + Shift + l']}
   />
-  <HotKeyButton
+  <TitledButton
     title="Align center"
     svg={_scope.getIcon('format_align_center')}
     svgSize="24px"
     paper={_scope.state.options.isPaper} 
     hotKeys={['Control + Shift + e']}
   />
-  <HotKeyButton
+  <TitledButton
     title="Align right"
     svg={_scope.getIcon('format_align_right')}
     svgSize="24px"
     paper={_scope.state.options.isPaper} 
     hotKeys={['Control + Shift + r']}
   />
-  <HotKeyButton
+  <TitledButton
     title="Justify content"
     svg={_scope.getIcon('format_align_justify')}
     svgSize="24px"
@@ -101,13 +95,11 @@ In **IE** it looks normally, but hot keys behaviour is not supported.
 ``` 
 
 ### Contributors
-*Write here contributor names/contacts*
-
-[GIT REPOSITORY](http://buildserver.jcatalog.com/gitweb/?p=js-react-application-generator.git)
+Kirill Volkovich
 
 ### Component Name
 
-HotKeyButton
+TitledButton
 
 ### License
 

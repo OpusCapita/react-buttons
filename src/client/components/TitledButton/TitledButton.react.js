@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
-import s from './HotKeyButton.module.less';
+import s from './TitledButton.module.less';
 import Button from '../Button';
-import HotKeyLabel from '../HotKeyLabel';
+import ButtonLabel from '../ButtonLabel';
 
 export default
-class HotKeyButton extends Component {
+class TitledButton extends Component {
   constructor(props) {
     super(props);
     this.state = { isHovered: false };
@@ -19,20 +19,20 @@ class HotKeyButton extends Component {
   }
 
   render() {
-    let { children, hotKeys, style, title, ...restProps } = this.props;
+    let { children, hotKeys, style, title, isAlwaysShowTitle, ...restProps } = this.props;
     let { isHovered } = this.state;
 
     let tips = (title && isHovered) ? (
       <div className={s.tips}>
         <div className={s.tip}>
-          <HotKeyLabel label={title} style={{ whiteSpace: 'nowrap' }} />
+          <ButtonLabel label={title} style={{ whiteSpace: 'nowrap' }} />
         </div>
       </div>
     ) : null;
 
     return (
       <div
-        className={s.hotKeyButton}
+        className={s.titledButton}
         onMouseEnter={this.handleMouseEnter.bind(this)}
         onMouseLeave={this.handleMouseLeave.bind(this)}
       >
@@ -46,4 +46,13 @@ class HotKeyButton extends Component {
       </div>
     );
   }
+}
+
+TitledButton.propTypes = {
+  title: PropTypes.string,
+  isAlwaysShowTitle: PropTypes.bool
+}
+
+TitledButton.defaultProps = {
+  isAlwaysShowTitle: false
 }

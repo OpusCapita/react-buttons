@@ -68,6 +68,35 @@ Button react component
   svgSize="48px"
   paper={_scope.state.options.isPaper}
 />
+
+<Button
+  title="Align left"
+  svg={_scope.getIcon('format_align_left')}
+  svgSize="24px"
+  paper={_scope.state.options.isPaper} 
+  hotKeys={['Control + Shift + l']}
+/>
+<Button
+  title="Align center"
+  svg={_scope.getIcon('format_align_center')}
+  svgSize="24px"
+  paper={_scope.state.options.isPaper} 
+  hotKeys={['Control + Shift + e']}
+/>
+<Button
+  title="Align right"
+  svg={_scope.getIcon('format_align_right')}
+  svgSize="24px"
+  paper={_scope.state.options.isPaper} 
+  hotKeys={['Control + Shift + r']}
+/>
+<Button
+  title="Justify content"
+  svg={_scope.getIcon('format_align_justify')}
+  svgSize="24px"
+  paper={_scope.state.options.isPaper} 
+  hotKeys={['Control + Shift + j']}
+/>
 ```
 
 ### Contributors
