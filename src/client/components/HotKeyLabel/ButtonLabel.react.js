@@ -1,13 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import s from './HotKeyLabel.module.less';
+import s from './ButtonLabel.module.less';
 
 export default
 class HotKeyLabel extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { };
-  }
-
   render() {
     let { bgColor, className, color, label, style, ...restProps } = this.props;
     let styles = {
@@ -27,12 +22,12 @@ class HotKeyLabel extends Component {
   }
 }
 
-HotKeyLabel.propTypes = {
+ButtonLabel.propTypes = {
   label: PropTypes.string,
   color: PropTypes.string,
   bgColor: PropTypes.string
 };
-HotKeyLabel.defaultProps = {
+ButtonLabel.defaultProps = {
   bgColor: '#333',
   color: '#fff'
 };

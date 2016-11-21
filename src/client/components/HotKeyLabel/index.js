@@ -1,1 +1,1 @@
-export default require('./HotKeyLabel.react').default;
+export default require('./ButtonLabel.react').default;
