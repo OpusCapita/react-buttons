@@ -77,6 +77,7 @@ class Button extends Component {
         className={`${className} ${s.button} ${disabled ? s.disabled : ''} ${paper ? s.paper : '' } ${isActive ? s['button--active'] : ''}`}
         style={buttonStyle}
         tabIndex={disabled ? '-1' : tabIndex}
+        type="button"
       >
         <div
           className={s.content}
