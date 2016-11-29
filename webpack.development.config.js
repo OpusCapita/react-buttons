@@ -2,9 +2,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const packageVersion = require('./package.json').version;
-let host = require('./clientConfig').host;
-let port = require('./clientConfig').port;
-
+const host = process.env.HOST ? process.env.HOST : 'localhost';
+const port = process.env.PORT ? process.env.PORT : 3000;
 module.exports = {
   entry: path.resolve(path.join(__dirname, 'www', 'index-page.js')),
   context: path.resolve(__dirname),
@@ -85,7 +84,11 @@ module.exports = {
         include: [
           path.join(__dirname, 'src'),
           path.join(__dirname, 'www')
-        ]
+        ],
+        query: {
+          presets: ['es2015', 'react', 'stage-0'],
+          plugins: ['transform-decorators-legacy']
+        }
       }
     ]
   }

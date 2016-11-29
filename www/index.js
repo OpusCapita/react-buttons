@@ -1,48 +1,31 @@
-'use strict';
-
-const compression = require('compression');
 const express = require('express');
-const fs = require('fs');
-const host = require('../clientConfig').host;
 const path = require('path');
-const port = require('../clientConfig').port;
 const webpack = require('webpack');
 const compiler = webpack(require('../webpack.development.config'));
 
-const app = express();
+require('@opuscapita/showroom-server').makeLocalScan(path.resolve(__dirname, '../src/client/components'));
 
-let componentsRoot = path.resolve(__dirname, '../src/client/components');
-require('jcatalog-showroom-server').makeLocalScan(componentsRoot);
-
-const babelrc = fs.readFileSync(path.join(__dirname, '../.babelrc'));
-let config;
-
-try {
-  config = JSON.parse(babelrc);
-} catch (err) {
-  console.error('==>     ERROR: Error parsing your .babelrc.');
-  console.error(err);
-}
-
-require('babel-register')(config);
+const host = process.env.HOST ? process.env.HOST : 'localhost';
+const port = process.env.PORT ? process.env.PORT : 3000;
 
 let serverOptions = {
   watchOptions: {
     aggregateTimeout: 300,
     poll: true
   },
-  headers: {'Access-Control-Allow-Origin': '*'},
-  stats: {colors: true}
+  headers: { 'Access-Control-Allow-Origin': '*' },
+  stats: { colors: true },
+  noInfo: true
 };
 
-app.use(compression());
+const app = express();
 app.use(require('webpack-dev-middleware')(compiler, serverOptions));
 
 app.get('/', function(req, res) {
   res.sendFile(path.normalize(__dirname + '/index.html'));
 });
 
-app.listen(port, (err) => {
+app.listen(port, host, (err) => {
   if (err) {
     console.log(err);
   }

@@ -21,32 +21,32 @@ Button react component
 | svgSize | string | Size of the svg icon. Example: `48px` |
 
 ### Tips
-* IE has a problem with key-navigation by `TAB` key. It take focus on `<svg>` element. Fix: `<svg focusable="false">`. We recommend use carefully prepared `jcatalog-svg-icons` package.
+* IE has a problem with key-navigation by `TAB` key. It take focus on `<svg>` element. Fix: `<svg focusable="false">`. We recommend use carefully prepared `@opuscapita/ui-svg-icons` package.
 
 ### Code Example
 
 ```
 <div style={{ display: 'flex', flexWrap: 'wrap', marginBottom: '24px' }}>
-  <Button 
+  <Button
     onClick={() => console.log('Cancel button click!')}
     label="Cancel" paper={_scope.state.options.isPaper}
   />
-  <Button 
-    color="#fff" 
-    bgColor="#e70" 
-    label="Apply" 
-    paper={_scope.state.options.isPaper} 
+  <Button
+    color="#fff"
+    bgColor="#e70"
+    label="Apply"
+    paper={_scope.state.options.isPaper}
   />
-  <Button 
+  <Button
     label="Disabled"
     disabled={true}
     paper={_scope.state.options.isPaper}
   />
-  <Button 
+  <Button
     svg={_scope.getIcon('shopping_cart')}
-    paper={_scope.state.options.isPaper} 
+    paper={_scope.state.options.isPaper}
   />
-  <Button 
+  <Button
     label="Icon button"
     svg={_scope.getIcon('build')}
     paper={_scope.state.options.isPaper}
@@ -73,28 +73,28 @@ Button react component
   title="Align left"
   svg={_scope.getIcon('format_align_left')}
   svgSize="24px"
-  paper={_scope.state.options.isPaper} 
+  paper={_scope.state.options.isPaper}
   hotKeys={['Control + Shift + l']}
 />
 <Button
   title="Align center"
   svg={_scope.getIcon('format_align_center')}
   svgSize="24px"
-  paper={_scope.state.options.isPaper} 
+  paper={_scope.state.options.isPaper}
   hotKeys={['Control + Shift + e']}
 />
 <Button
   title="Align right"
   svg={_scope.getIcon('format_align_right')}
   svgSize="24px"
-  paper={_scope.state.options.isPaper} 
+  paper={_scope.state.options.isPaper}
   hotKeys={['Control + Shift + r']}
 />
 <Button
   title="Justify content"
   svg={_scope.getIcon('format_align_justify')}
   svgSize="24px"
-  paper={_scope.state.options.isPaper} 
+  paper={_scope.state.options.isPaper}
   hotKeys={['Control + Shift + j']}
 />
 ```
@@ -109,4 +109,3 @@ Button
 ### License
 
 Licensed by © 2016 OpusCapita
-
