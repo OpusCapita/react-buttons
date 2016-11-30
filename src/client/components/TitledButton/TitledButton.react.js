@@ -33,11 +33,13 @@ class TitledButton extends Component {
 
     let tips = (title && isHovered) ? (
         <div className={s.tips}>
-          <StickyNode restrictorNode={restrictorNode}>
-          <div className={s.tip}>
-            <ButtonLabel label={title} style={{ whiteSpace: 'nowrap' }} />
-          </div>
+          <div className={s.tipsHelper}>
+            <StickyNode restrictorNode={restrictorNode}>
+              <div className={s.tip}>
+                <ButtonLabel label={title} style={{ whiteSpace: 'nowrap' }} />
+              </div>
             </StickyNode>
+          </div>
         </div>
     ) : null;
 
