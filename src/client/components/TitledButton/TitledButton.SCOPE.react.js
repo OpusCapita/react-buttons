@@ -36,7 +36,7 @@ class TitledButtonSCOPE extends Component {
 
   render() {
     return (
-      <div>
+      <div ref={ref => !this.state.ref && this.setState({ ref: ref })}>
         <div style={{ marginBottom: '24px' }}>
           <Button
             altContent={this.state.options.isPaper ? (

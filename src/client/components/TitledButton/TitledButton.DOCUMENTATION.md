@@ -9,6 +9,7 @@ A wrapper around **Button** component. Adde
 | Name                          | Type                  | Description                                                |
 | ------------------------------|:----------------------| -----------------------------------------------------------|
 | title | string | title |
+| restrictorNode | object | `restrictorNode` for title. See `https://github.com/OpusCapitaBES/js-react-ui-overlays` `StickyNode` component |
 
 ### Code Example
 
@@ -62,13 +63,14 @@ A wrapper around **Button** component. Adde
   />
 </div>
 
-<div style={{ display: 'flex', flexWrap: 'wrap', marginBottom: '24px' }}>
+<div style={{ display: 'flex', flexWrap: 'wrap', marginBottom: '24px', paddingBottom: '100px' }}>
   <TitledButton
-    title="Align left"
+    title="Align left. Long text auto positioned"
     svg={_scope.getIcon('format_align_left')}
     svgSize="24px"
     paper={_scope.state.options.isPaper} 
     hotKeys={['Control + Shift + l']}
+    restrictorNode={_scope.state.ref}
   />
   <TitledButton
     title="Align center"
@@ -85,10 +87,11 @@ A wrapper around **Button** component. Adde
     hotKeys={['Control + Shift + r']}
   />
   <TitledButton
-    title="Justify content"
+    title="Justify content. Long text auto positioned."
     svg={_scope.getIcon('format_align_justify')}
     svgSize="24px"
     paper={_scope.state.options.isPaper} 
+    restrictorNode={_scope.state.ref}
     hotKeys={['Control + Shift + j']}
   />
 </div>

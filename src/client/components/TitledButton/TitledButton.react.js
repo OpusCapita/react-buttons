@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import s from './TitledButton.module.less';
 import Button from '../Button';
 import ButtonLabel from '../ButtonLabel';
+import StickyNode from '@opuscapita/react-ui-overlays/lib/StickyNode'
 
 export default
 class TitledButton extends Component {
@@ -19,15 +20,25 @@ class TitledButton extends Component {
   }
 
   render() {
-    let { children, hotKeys, style, title, isAlwaysShowTitle, ...restProps } = this.props;
+    let {
+      children,
+      hotKeys,
+      style,
+      restrictorNode,
+      title,
+      isAlwaysShowTitle,
+      ...restProps
+    } = this.props;
     let { isHovered } = this.state;
 
     let tips = (title && isHovered) ? (
-      <div className={s.tips}>
-        <div className={s.tip}>
-          <ButtonLabel label={title} style={{ whiteSpace: 'nowrap' }} />
+        <div className={s.tips}>
+          <StickyNode restrictorNode={restrictorNode}>
+          <div className={s.tip}>
+            <ButtonLabel label={title} style={{ whiteSpace: 'nowrap' }} />
+          </div>
+            </StickyNode>
         </div>
-      </div>
     ) : null;
 
     return (
@@ -50,6 +61,7 @@ class TitledButton extends Component {
 
 TitledButton.propTypes = {
   title: PropTypes.string,
+  restrictorNode: PropTypes.object,
   isAlwaysShowTitle: PropTypes.bool
 }
 
