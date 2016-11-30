@@ -9,7 +9,7 @@ A wrapper around **Button** component. Adde
 | Name                          | Type                  | Description                                                |
 | ------------------------------|:----------------------| -----------------------------------------------------------|
 | title | string | title |
-| restrictorNode | object | `restrictorNode` for title. See `https://github.com/OpusCapitaBES/js-react-ui-overlays` `StickyNode` component |
+| restrictorNode | object | `restrictorNode` for title. Use for autopositioning long labels. See `https://github.com/OpusCapitaBES/js-react-ui-overlays` `StickyNode` component |
 
 ### Code Example
 
