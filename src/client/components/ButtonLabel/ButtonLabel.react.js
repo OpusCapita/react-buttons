@@ -4,7 +4,14 @@ import s from './ButtonLabel.module.less';
 export default
 class ButtonLabel extends Component {
   render() {
-    let { bgColor, className, color, label, style, ...restProps } = this.props;
+    let {
+      bgColor,
+      className, // eslint-disable-line
+      color,
+      label,
+      style, // eslint-disable-line
+      ...restProps
+    } = this.props;
     let styles = {
       color: color,
       backgroundColor: bgColor,

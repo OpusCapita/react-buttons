@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import s from './Button.module.less';
-import SVGIcon from '@opuscapita/react-ui-svg/lib/SVGIcon';
+import SVGIcon from 'opuscapita-react-ui-svg/lib/SVGIcon';
 
 export default
 class Button extends Component {
@@ -10,13 +10,13 @@ class Button extends Component {
   }
 
   getPaddingCompensationRule(contentPosition, svg, label, children) {
-    if(svg && label && contentPosition === 'before') {
+    if (svg && label && contentPosition === 'before') {
       return { paddingLeft: '8px' };
     }
-    if(svg && label && contentPosition === 'after') {
+    if (svg && label && contentPosition === 'after') {
       return { paddingRight: '8px' };
     }
-    if(svg && !label && !children) {
+    if (svg && !label && !children) {
       return { paddingLeft: '4px', paddingRight: '4px' }
     }
     return {};
@@ -68,13 +68,16 @@ class Button extends Component {
     ) : null;
 
     let buttonDelimiter = (buttonChildren && label) ? (
-      <div className={s.delimiter}></div>
+      <div className={s.delimiter} />
     ) : null;
+
+    // eslint-disable-next-line max-len
+    let buttonClassName = `${className} ${s.button} ${disabled ? s.disabled : ''} ${paper ? s.paper : '' } ${isActive ? s['button--active'] : ''}`;
 
     return (
       <button
         { ...restProps }
-        className={`${className} ${s.button} ${disabled ? s.disabled : ''} ${paper ? s.paper : '' } ${isActive ? s['button--active'] : ''}`}
+        className={buttonClassName}
         style={buttonStyle}
         tabIndex={disabled ? '-1' : tabIndex}
         type="button"

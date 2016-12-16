@@ -11,17 +11,12 @@
     "publish-snapshot": "npm run npm-publish",
     "publish-release": "npm run npm-publish -- --release"
   },
-  "author": {
-    "name": "Kirill Volkovich",
-    "email": "volkovich@scand.com"
-  },
   "main": "lib/index.js",
   "files": [
     "lib",
     "README.md"
   ],
   "license": "UNLICENSED",
-  "readme": "README.md",
   "repository": {
     "type": "git",
     "url": "https://github.com/OpusCapitaBES/js-react-ui-buttons"
@@ -31,15 +26,10 @@
     "react-dom": "0.14.8"
   },
   "dependencies": {
-    "@opuscapita/react-ui-overlays": "1.0.3",
-    "@opuscapita/react-ui-svg": "1.0.0"
+    "opuscapita-react-ui-overlays": "1.0.4",
+    "opuscapita-react-ui-svg": "1.0.2"
   },
   "devDependencies": {
-    "@opuscapita/eslint-config": "1.0.0",
-    "@opuscapita/npm-scripts": "1.0.0",
-    "@opuscapita/showroom-client": "1.0.4",
-    "@opuscapita/showroom-server": "1.0.4",
-    "@opuscapita/ui-svg-icons": "1.0.0",
     "autoprefixer": "6.4.1",
     "babel-cli": "6.5.1",
     "babel-core": "6.4.0",
@@ -62,6 +52,11 @@
     "less": "2.3.1",
     "less-loader": "2.2.2",
     "nodemon": "1.9.1",
+    "eslint-config-opuscapita": "1.0.3",
+    "opuscapita-npm-scripts": "1.0.5",
+    "opuscapita-showroom-client": "1.0.10",
+    "opuscapita-showroom-server": "1.0.10",
+    "opuscapita-ui-svg-icons": "1.0.4",
     "postcss-loader": "0.13.0",
     "postcss-modules": "0.5.2",
     "raw-loader": "0.5.1",
