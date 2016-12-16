@@ -1,4 +1,11 @@
 
+Release 1.0.6 Fri Dec 16 2016 12:47:17 GMT+0300 (+03)
+=======================================================
+
+ - Fixed import. Improved ButtonLabel documentation (kirillvolkovich <kirill.volkovich@jcatalog.com>, Fri Dec 16 12:47:10 2016 +0300)
+ - Fixed lint errors (kirillvolkovich <kirill.volkovich@jcatalog.com>, Fri Dec 16 12:44:45 2016 +0300)
+ - Updating to a version to  1.0.6 (volkovich <Kirill.Volkovich@jCatalog.com>, Wed Nov 30 22:55:28 2016 +0300)
+
 Release 1.0.5 Wed Nov 30 2016 22:54:57 GMT+0300 (Belarus Standard Time)
 =======================================================
 
