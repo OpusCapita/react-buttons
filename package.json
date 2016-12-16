@@ -1,5 +1,5 @@
 {
-  "name": "@opuscapita/react-ui-buttons",
+  "name": "opuscapita-react-ui-buttons",
   "version": "1.0.7",
   "description": "Start write new project with no effort.",
   "scripts": {
