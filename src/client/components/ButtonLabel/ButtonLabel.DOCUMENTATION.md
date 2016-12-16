@@ -5,7 +5,7 @@ ButtonLabel is ...
 ### Code Example
 
 ```
-<ButtonLabel />
+<ButtonLabel label="hello" />
 ```
 
 ### Props Reference
