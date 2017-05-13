@@ -1,4 +1,10 @@
 
+Release 1.0.9 Sat May 13 2017 19:15:29 GMT+0300 (+03)
+=======================================================
+
+ - Update dependency (Kirill Volkovich <volkovich@scand.com>, Sat May 13 19:15:21 2017 +0300)
+ - Updating to a version to  1.0.9 (Kirill Volkovich <volkovich@scand.com>, Sat May 13 19:12:18 2017 +0300)
+
 Release 1.0.7 Fri Dec 16 2016 12:49:01 GMT+0300 (+03)
 =======================================================
 
