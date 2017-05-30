@@ -1,11 +1,11 @@
 Arguments: 
-  /home/volkovich/.nvm/versions/node/v6.9.1/bin/node /usr/share/yarn/bin/yarn.js
+  /home/volkovich/.nvm/versions/node/v6.9.1/bin/node /usr/share/yarn/bin/yarn.js add @opuscapita/npm-scripts@1.0.8
 
 PATH: 
-  /home/volkovich/.yarn/bin:/home/volkovich/.nvm/versions/node/v6.9.1/bin:/home/volkovich/.yarn/bin:/home/volkovich/.yarn/bin:/home/volkovich/bin:/home/volkovich/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/volkovich/.cask/bin:/home/volkovich/.cask/bin:/home/volkovich/.cask/bin
+  /home/volkovich/.sdkman/candidates/java/current/bin:/home/volkovich/perl5/bin;/home/volkovich/vcs/jcatalog-installer/bin;:/usr/share/maven/bin:/home/volkovich/bin/grails-2.4.4/bin:/home/volkovich/.yarn/bin:/home/volkovich/.nvm/versions/node/v6.9.1/bin:/home/volkovich/bin:/home/volkovich/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/volkovich/.cask/bin
 
 Yarn version: 
-  0.19.0-20161214.0609
+  0.22.0-20170221.1821
 
 Node version: 
   6.9.1
@@ -15,8 +15,8 @@ Platform:
 
 npm manifest: 
   {
-    "name": "@opuscapita/react-ui-buttons",
-    "version": "1.0.6",
+    "name": "opuscapita-react-ui-buttons",
+    "version": "1.0.13",
     "description": "Start write new project with no effort.",
     "scripts": {
       "npm-build": "rimraf lib && babel --copy-files --no-babelrc --presets es2015,stage-0,react --plugins transform-decorators-legacy --ignore __tests__,*.spec.js,demo src/client/components --out-dir lib",
@@ -32,20 +32,22 @@ npm manifest:
       "lib",
       "README.md"
     ],
-    "license": "UNLICENSED",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/OpusCapitaBES/js-react-ui-buttons"
+    "license": "Apache-2.0",
+    "repository": "OpusCapitaBES/js-react-ui-buttons",
+    "publishConfig": {
+      "access": "public",
+      "registry": "https://registry.npmjs.org"
     },
     "peerDependencies": {
-      "react": "0.14.8",
-      "react-dom": "0.14.8"
+      "react": ">= 0.14.8",
+      "react-dom": ">= 0.14.8"
     },
     "dependencies": {
-      "opuscapita-react-ui-overlays": "1.0.4",
-      "opuscapita/react-ui-svg": "1.0.0"
+      "opuscapita-react-ui-overlays": "1.0.11",
+      "opuscapita-react-ui-svg": "1.0.3"
     },
     "devDependencies": {
+      "@opuscapita/npm-scripts": "1.0.8",
       "autoprefixer": "6.4.1",
       "babel-cli": "6.5.1",
       "babel-core": "6.4.0",
@@ -61,6 +63,7 @@ npm manifest:
       "cross-env": "1.0.7",
       "css-loader": "0.21.0",
       "eslint": "3.11.1",
+      "eslint-config-opuscapita": "1.0.7",
       "eslint-plugin-react": "6.7.1",
       "express": "4.13.4",
       "file-loader": "0.9.0",
@@ -68,11 +71,11 @@ npm manifest:
       "less": "2.3.1",
       "less-loader": "2.2.2",
       "nodemon": "1.9.1",
-      "opuscapita-eslint-config": "1.0.0",
-      "opuscapita-npm-scripts": "1.0.0",
-      "opuscapita-showroom-client": "1.0.4",
-      "opuscapita-showroom-server": "1.0.4",
-      "opuscapita-ui-svg-icons": "1.0.0",
+      "opuscapita-showroom-client": "1.1.0",
+      "opuscapita-showroom-server": "1.1.0",
+      "opuscapita-ui-svg-icons": "1.0.4",
+      "react": "15.4.2",
+      "react-dom": "15.4.2",
       "postcss-loader": "0.13.0",
       "postcss-modules": "0.5.2",
       "raw-loader": "0.5.1",
@@ -93,7 +96,7 @@ Lockfile:
   No lockfile
 
 Trace: 
-  Error: http://leon.scand:4873/opuscapita%2freact-ui-svg: invalid package
+  Error: http://localhost:8081/repository/npm/autoprefixer: Package 'autoprefixer' not found
       at Request.params.callback [as _callback] (/usr/share/yarn/lib/util/request-manager.js:313:18)
       at Request.self.callback (/usr/share/yarn/node_modules/request/request.js:186:22)
       at emitTwo (events.js:106:13)

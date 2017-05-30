@@ -21,7 +21,7 @@ A wrapper around **Button** component. Adde
     hotKeys={['Escape']}
   />
   <TitledButton 
-    action={() => console.log('Save fired!')}
+    onClick={() => console.log('Save fired!')}
     color="#fff" 
     bgColor="#e70" 
     label="Save" 

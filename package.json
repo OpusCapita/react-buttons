@@ -1,5 +1,5 @@
 {
-  "name": "opuscapita-react-ui-buttons",
+  "name": "@opuscapita/react-buttons",
   "version": "1.0.13",
   "description": "Start write new project with no effort.",
   "scripts": {
@@ -16,14 +16,15 @@
     "lib",
     "README.md"
   ],
-  "license": "UNLICENSED",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/OpusCapitaBES/js-react-ui-buttons"
+  "license": "Apache-2.0",
+  "repository": "OpusCapitaBES/js-react-ui-buttons",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "peerDependencies": {
-    "react": "0.14.8",
-    "react-dom": "0.14.8"
+    "react": ">= 0.14.8",
+    "react-dom": ">= 0.14.8"
   },
   "dependencies": {
     "opuscapita-react-ui-overlays": "1.0.11",
@@ -45,6 +46,7 @@
     "cross-env": "1.0.7",
     "css-loader": "0.21.0",
     "eslint": "3.11.1",
+    "eslint-config-opuscapita": "1.0.7",
     "eslint-plugin-react": "6.7.1",
     "express": "4.13.4",
     "file-loader": "0.9.0",
@@ -52,11 +54,12 @@
     "less": "2.3.1",
     "less-loader": "2.2.2",
     "nodemon": "1.9.1",
-    "eslint-config-opuscapita": "1.0.3",
-    "opuscapita-npm-scripts": "1.0.5",
-    "opuscapita-showroom-client": "1.0.10",
-    "opuscapita-showroom-server": "1.0.10",
+    "opuscapita-npm-scripts": "1.0.7",
+    "opuscapita-showroom-client": "1.1.0",
+    "opuscapita-showroom-server": "1.1.0",
     "opuscapita-ui-svg-icons": "1.0.4",
+    "react": "15.4.2",
+    "react-dom": "15.4.2",
     "postcss-loader": "0.13.0",
     "postcss-modules": "0.5.2",
     "raw-loader": "0.5.1",
