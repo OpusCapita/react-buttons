@@ -8,9 +8,11 @@ Simple Button react components.
 
 The **motivation** to develop - Twitter Bootstrap that we use don't provide any components for implementing accuracy looking toolbar buttons.
 
-## Demo
+## Demo and components documentation
 
-[https://opuscapitabes.github.io/js-react-ui-buttons](https://opuscapitabes.github.io/js-react-ui-buttons)
+* [Documentation](https://opuscapitabes.github.io/js-react-ui-buttons)
+
+> Powered by [opuscapita-showroom](https://github.com/OpusCapitaBES/js-react-showroom-client)
 
 ## Installation
 
