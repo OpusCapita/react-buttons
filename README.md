@@ -1,4 +1,4 @@
-# React buttons ![badge-npm-version](https://img.shields.io/npm/v/@opuscapita/react-buttons.svg) ![badge-license](https://img.shields.io/github/license/OpusCapitaBes/js-react-ui-buttons.svg)
+# React buttons
 
 ## Synopsis
 
