@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import s from './TitledButton.module.less';
 import Button from '../Button';
 import ButtonLabel from '../ButtonLabel';
-import StickyNode from 'opuscapita-react-ui-overlays/lib/StickyNode'
+import StickyNode from 'opuscapita-react-ui-overlays/lib/StickyNode';
 
 export default
 class TitledButton extends Component {
@@ -22,7 +22,6 @@ class TitledButton extends Component {
   render() {
     let {
       children,
-      hotKeys, // eslint-disable-line
       style, // eslint-disable-line
       restrictorNode,
       title,

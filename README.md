@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-...
+![demo.gif](./demo.gif)
 
 ## Demo
 

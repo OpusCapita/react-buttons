@@ -1,27 +1,28 @@
 ### Synopsis
 
-Button react component
+Button react component.
 
 ### Props Reference
 
-| Name                          | Type                  | Description                                                |
-| ------------------------------|:----------------------| -----------------------------------------------------------|
-| isActive | bool | Emulate checkbox behaviour. Useful on toolbars with icons |
-| altContent | node | Use it for temporary substitution of content if you want to save original button sizes. Useful for in-button spinners. Size **must** be smaller or equals original content |
-| bgColor | string | Background color. Icon inherit this property |
-| color | string | Text color. Icon inherit as **svg fill** |
-| className | string | Default behaviour |
-| disabled | bool | If **true**, **onClick** property not fire and **TAB key** navigation skip the button |
-| disablePaddingCompensation | bool | If **svg** is specified, padding at **svg** side has half size for more beautiful look. This property disable it behaviour |
-| label | string | Button text |
-| contentPosition | oneOf(['before', 'after']) | Specify position of **svg icon** and other children relative to label text |
-| style | object | Default behaviour |
-| tabIndex | number | Default behaviour |
-| svg | string | **svg** element string representation. Using as icon. Example: `<svg viewBox="0 0 120 120" version="1.1"><circle cx="60" cy="60" r="50"/></svg>` |
-| svgSize | string | Size of the svg icon. Example: `48px` |
+| Name                           | Type                       | Description                                                                                                                                                                |
+| ------------------------------ | :----------------------    | -----------------------------------------------------------                                                                                                                |
+| isActive                       | bool                       | Emulate checkbox behaviour. Useful on toolbars with icons                                                                                                                  |
+| altContent                     | node                       | Use it for temporary substitution of content if you want to save original button sizes. Useful for in-button spinners. Size **must** be smaller or equals original content |
+| bgColor                        | string                     | Background color. Icon inherit this property                                                                                                                               |
+| color                          | string                     | Text color. Icon inherit as **svg fill**                                                                                                                                   |
+| className                      | string                     | Default behaviour                                                                                                                                                          |
+| disabled                       | bool                       | If **true**, **onClick** property not fire and **TAB key** navigation skip the button                                                                                      |
+| disablePaddingCompensation     | bool                       | If **svg** is specified, padding at **svg** side has half size for more beautiful look. This property disable it behaviour                                                 |
+| label                          | string                     | Button text                                                                                                                                                                |
+| contentPosition                | oneOf(['before', 'after']) | Specify position of **svg icon** and other children relative to label text                                                                                                 |
+| style                          | object                     | Default behaviour                                                                                                                                                          |
+| tabIndex                       | number                     | Default behaviour                                                                                                                                                          |
+| svg                            | string                     | **svg** element string representation. Using as icon. Example: `<svg viewBox="0 0 120 120" version="1.1"><circle cx="60" cy="60" r="50"/></svg>`                           |
+| svgSize                        | string                     | Size of the svg icon. Example: `48px`                                                                                                                                      |
 
-### Tips
-* IE has a problem with key-navigation by `TAB` key. It take focus on `<svg>` element. Fix: `<svg focusable="false">`. We recommend use carefully prepared `@opuscapita/ui-svg-icons` package.
+### IE supporter, be careful!
+
+* IE has a problem with key-navigation by `TAB` key. It takes a focus on `<svg>` element. Fix: `<svg focusable="false">`. We recommend use carefully prepared `@opuscapita/ui-svg-icons` package.
 
 ### Code Example
 
@@ -73,34 +74,27 @@ Button react component
     svg={_scope.getIcon('format_align_left')}
     svgSize="24px"
     paper={_scope.state.options.isPaper}
-    hotKeys={['Control + Shift + l']}
   />
   <Button
     title="Align center"
     svg={_scope.getIcon('format_align_center')}
     svgSize="24px"
     paper={_scope.state.options.isPaper}
-    hotKeys={['Control + Shift + e']}
   />
   <Button
     title="Align right"
     svg={_scope.getIcon('format_align_right')}
     svgSize="24px"
     paper={_scope.state.options.isPaper}
-    hotKeys={['Control + Shift + r']}
   />
   <Button
     title="Justify content"
     svg={_scope.getIcon('format_align_justify')}
     svgSize="24px"
     paper={_scope.state.options.isPaper}
-    hotKeys={['Control + Shift + j']}
   />
 </div>
 ```
-
-### Contributors
-Kirill Volkovich
 
 ### Component Name
 
@@ -108,4 +102,4 @@ Button
 
 ### License
 
-Licensed by © 2016 OpusCapita
+Licensed by © 2017 OpusCapita
