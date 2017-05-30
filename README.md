@@ -16,17 +16,16 @@ The **motivation** to develop - Twitter Bootstrap that we use don't provide any 
 
 ## Usage
 
-* Install package:
+#### Install package:
 
-  `yarn add @opuscapita/react-buttons`
+`yarn add @opuscapita/react-buttons`
 
-* Import component
+#### Import component
 
-  `import { Button } from '@opuscapita/react-buttons`
-  
-  or
-  
-  `import Button from '@opuscapita/react-buttons/lib/Button`  
+```
+import { Button } from '@opuscapita/react-buttons // or
+import Button from '@opuscapita/react-buttons/lib/Button
+```
 
 ## Contributors
 
