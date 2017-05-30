@@ -4,7 +4,7 @@
 
 ![demo.gif](./demo.gif)
 
-Simple Button react components. 
+Just a button react components. 
 
 The **motivation** to develop - Twitter Bootstrap that we use don't provide any components for implementing accuracy looking toolbar buttons.
 
