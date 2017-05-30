@@ -14,15 +14,19 @@ The **motivation** to develop - Twitter Bootstrap that we use don't provide any 
 
 > Powered by [opuscapita-showroom](https://github.com/OpusCapitaBES/js-react-showroom-client)
 
-## Installation
+## Usage
 
-`yarn add @opuscapita/react-buttons`
+* Install package:
 
-`import { Button } from '@opuscapita/react-buttons`
+  `yarn add @opuscapita/react-buttons`
 
-or
+* Import component
 
-`import Button from '@opuscapita/react-buttons/lib/Button`
+  `import { Button } from '@opuscapita/react-buttons`
+  
+  or
+  
+  `import Button from '@opuscapita/react-buttons/lib/Button`  
 
 ## Contributors
 
