@@ -4,6 +4,10 @@
 
 ![demo.gif](./demo.gif)
 
+Simple Button react components. 
+
+The **motivation** to develop - Twitter Bootstrap that we use don't provide any components for implementing accuracy looking toolbar buttons.
+
 ## Demo
 
 [https://opuscapitabes.github.io/js-react-ui-buttons](https://opuscapitabes.github.io/js-react-ui-buttons)
