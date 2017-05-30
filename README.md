@@ -10,7 +10,7 @@ The **motivation** to develop - Twitter Bootstrap that we use don't provide any 
 
 ## Demo and components documentation
 
-* [Documentation](https://opuscapitabes.github.io/js-react-ui-buttons)
+[Documentation](https://opuscapitabes.github.io/js-react-ui-buttons)
 
 > Powered by [opuscapita-showroom](https://github.com/OpusCapitaBES/js-react-showroom-client)
 
