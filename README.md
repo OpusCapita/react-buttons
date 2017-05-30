@@ -28,4 +28,4 @@ Provide code examples and explanations of how to get the project.
 
 ## License
 
-**OpusCapita Showroom** is licensed under the Apache License, Version 2.0. See [LICENSE](./LICENSE) for the full license text.
+Licensed under the Apache License, Version 2.0. See [LICENSE](./LICENSE) for the full license text.
