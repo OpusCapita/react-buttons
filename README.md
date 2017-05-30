@@ -27,9 +27,9 @@ import Button from '@opuscapita/react-buttons/lib/Button
 
 ## Contributors
 
-| <img src="https://avatars.githubusercontent.com/u/24603787?v=3" width="100px;"/> | [Alexey Sergeev](https://github.com/asergeev-sc)     |
+| <img src="https://avatars.githubusercontent.com/u/24603787?v=3" width="100px;"/> | [**Alexey Sergeev**](https://github.com/asergeev-sc)     |
 | :---: | :---: |
-| <img src="https://avatars.githubusercontent.com/u/24652543?v=3" width="100px;"/> | [Kirill Volkovich](https://github.com/kvolkovich-sc) |
+| <img src="https://avatars.githubusercontent.com/u/24652543?v=3" width="100px;"/> | [**Kirill Volkovich**](https://github.com/kvolkovich-sc) |
 
 ## License
 
