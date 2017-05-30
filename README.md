@@ -6,17 +6,17 @@
 
 ## Demo
 
-[https://github.com...](.....)
-
-## Motivation
-
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+[https://opuscapitabes.github.io/js-react-ui-buttons](https://opuscapitabes.github.io/js-react-ui-buttons)
 
 ## Installation
 
 `yarn add @opuscapita/react-buttons`
 
-Provide code examples and explanations of how to get the project.
+`import { Button } from '@opuscapita/react-buttons`
+
+or
+
+`import Button from '@opuscapita/react-buttons/lib/Button`
 
 ## Contributors
 
