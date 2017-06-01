@@ -31,6 +31,8 @@
     "opuscapita-react-ui-svg": "1.0.3"
   },
   "devDependencies": {
+    "@opuscapita/react-showroom-client": "1.2.10",
+    "@opuscapita/react-showroom-server": "1.2.0",
     "autoprefixer": "6.4.1",
     "babel-cli": "6.5.1",
     "babel-core": "6.4.0",
@@ -56,8 +58,6 @@
     "less-loader": "2.2.2",
     "nodemon": "1.9.1",
     "opuscapita-npm-scripts": "1.0.7",
-    "opuscapita-showroom-client": "1.1.0",
-    "opuscapita-showroom-server": "1.1.0",
     "opuscapita-ui-svg-icons": "1.0.4",
     "postcss-loader": "0.13.0",
     "postcss-modules": "0.5.2",

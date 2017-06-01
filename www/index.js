@@ -3,7 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const compiler = webpack(require('../webpack.development.config'));
 
-require('opuscapita-showroom-server').makeLocalScan(path.resolve(__dirname, '../src/client/components'));
+require('@opuscapita/react-showroom-server').makeLocalScan(path.resolve(__dirname, '../src/client/components'));
 
 const host = process.env.HOST ? process.env.HOST : 'localhost';
 const port = process.env.PORT ? process.env.PORT : 3000;

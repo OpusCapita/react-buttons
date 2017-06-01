@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Showroom from 'opuscapita-showroom-client';
+import Showroom from '@opuscapita/react-showroom-client';
 import 'bootstrap/less/bootstrap.less';
 
 let element = document.getElementById('main');

@@ -2,6 +2,19 @@
 # yarn lockfile v1
 
 
+"@opuscapita/react-showroom-client@1.2.10":
+  version "1.2.10"
+  resolved "http://leon.scand:4873/@opuscapita%2freact-showroom-client/-/react-showroom-client-1.2.10.tgz#d4ee522d905cb441390c02fe2638db332bec6114"
+
+"@opuscapita/react-showroom-server@1.2.0":
+  version "1.2.0"
+  resolved "http://leon.scand:4873/@opuscapita%2freact-showroom-server/-/react-showroom-server-1.2.0.tgz#966c47f6e0f52a3d3b6a888f1fe5d284e7606fef"
+  dependencies:
+    fs-extra "0.30.0"
+    glob "7.1.1"
+    lodash "4.17.4"
+    markdown-to-ast "3.4.0"
+
 "@opuscapita/react-ui-buttons@1.0.1":
   version "1.0.1"
   resolved "http://leon.scand:4873/@opuscapita%2freact-ui-buttons/-/react-ui-buttons-1.0.1.tgz#b5cf4e3e9b5fdaba1f5dc3c1da20d772d20cc35a"
@@ -3424,19 +3437,6 @@ opuscapita-react-ui-svg@1.0.2:
 opuscapita-react-ui-svg@1.0.3:
   version "1.0.3"
   resolved "http://leon.scand:4873/opuscapita-react-ui-svg/-/opuscapita-react-ui-svg-1.0.3.tgz#85e47af2d32b80242ad3f7d678283c9360de3ead"
-
-opuscapita-showroom-client@1.1.0:
-  version "1.1.0"
-  resolved "http://leon.scand:4873/opuscapita-showroom-client/-/opuscapita-showroom-client-1.1.0.tgz#adcd385ff8ce7a8842e2f812c4e8b217e895adde"
-
-opuscapita-showroom-server@1.1.0:
-  version "1.1.0"
-  resolved "http://leon.scand:4873/opuscapita-showroom-server/-/opuscapita-showroom-server-1.1.0.tgz#072892fdff70a35166e1b83781c6b8b4d42fefe6"
-  dependencies:
-    fs-extra "0.30.0"
-    glob "7.1.1"
-    lodash "4.17.4"
-    markdown-to-ast "3.4.0"
 
 opuscapita-ui-svg-icons@1.0.4:
   version "1.0.4"
