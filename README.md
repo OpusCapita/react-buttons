@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-![demo.gif](https://raw.githubusercontent.com/OpusCapitaBES/js-react-ui-buttons/e98d14ee9f301c2fa67ec3112be4bdf76488590f/demo.gif?token=AXgq_1hugQN1ebl-mvG2gin7TkkVeQnPks5ZNpEvwA%3D%3D)
+![demo.gif](https://github.com/OpusCapita/react-buttons/blob/master/demo.gif)
 
 Just a button react components. 
 
