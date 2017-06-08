@@ -27,8 +27,8 @@
     "react-dom": ">= 0.14.8"
   },
   "dependencies": {
-    "opuscapita-react-ui-overlays": "1.0.11",
-    "opuscapita-react-ui-svg": "1.0.3"
+    "@opuscapita/react-overlays": "1.0.13",
+    "@opuscapita/react-svg": "1.0.4"
   },
   "devDependencies": {
     "@opuscapita/react-showroom-client": "1.2.10",
