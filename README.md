@@ -8,9 +8,9 @@ Just a button react components.
 
 The **motivation** to develop - Twitter Bootstrap that we use don't provide any components for implementing accuracy looking toolbar buttons.
 
-[Demo and documentation](https://opuscapitabes.github.io/js-react-ui-buttons)
+[Demo and documentation](https://opuscapita.github.io/react-buttons)
 
-> Powered by [opuscapita-showroom](https://github.com/OpusCapitaBES/js-react-showroom-client)
+> Powered by [OpusCapita ShowRoom](https://github.com/OpusCapita/react-showroom-client)
 
 ## Usage
 
