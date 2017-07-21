@@ -1,3 +1,9 @@
+[![CircleCI Status](https://circleci.com/gh/OpusCapita/react-buttons/tree/master.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/OpusCapita/react-buttons)
+![badge-npm-version](https://img.shields.io/npm/v/@opuscapita/react-buttons.svg)
+[![NPM Downloads](https://img.shields.io/npm/dm/@opuscapita/react-buttons.svg)](https://npmjs.org/package/@opuscapita/react-buttons)
+![badge-license](https://img.shields.io/github/license/OpusCapita/react-buttons.svg)
+
+
 # React buttons
 
 ## Synopsis
