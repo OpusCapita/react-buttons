@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import s from './TitledButton.module.less';
+import './TitledButton.less';
 import Button from '../Button';
 import ButtonLabel from '../ButtonLabel';
 import StickyNode from '@opuscapita/react-overlays/lib/StickyNode';
@@ -22,6 +22,7 @@ class TitledButton extends Component {
   render() {
     let {
       children,
+      className,
       style, // eslint-disable-line
       restrictorNode,
       title,
@@ -31,10 +32,10 @@ class TitledButton extends Component {
     let { isHovered } = this.state;
 
     let tips = (title && isHovered) ? (
-        <div className={s.tips}>
-          <div className={s.tipsHelper}>
+        <div className={`oc-titled-button__tips`}>
+          <div className={`oc-titled-button__tips-helper`}>
             <StickyNode restrictorNode={restrictorNode}>
-              <div className={s.tip}>
+              <div className={`oc-title-button__tip`}>
                 <ButtonLabel label={title} style={{ whiteSpace: 'nowrap' }} />
               </div>
             </StickyNode>
@@ -44,7 +45,7 @@ class TitledButton extends Component {
 
     return (
       <div
-        className={s.titledButton}
+        className={`oc-titled-button ${className}`}
         onMouseEnter={this.handleMouseEnter.bind(this)}
         onMouseLeave={this.handleMouseLeave.bind(this)}
       >
@@ -61,11 +62,13 @@ class TitledButton extends Component {
 }
 
 TitledButton.propTypes = {
+  className: PropTypes.string,
   title: PropTypes.string,
   restrictorNode: PropTypes.object,
   isAlwaysShowTitle: PropTypes.bool
-}
+};
 
 TitledButton.defaultProps = {
+  className: '',
   isAlwaysShowTitle: false
-}
+};

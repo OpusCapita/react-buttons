@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import s from './Button.module.less';
+import './Button.less';
 import SVGIcon from '@opuscapita/react-svg/lib/SVGIcon';
 
 export default
@@ -17,7 +17,7 @@ class Button extends Component {
       return { paddingRight: '8px' };
     }
     if (svg && !label && !children) {
-      return { paddingLeft: '4px', paddingRight: '4px' }
+      return { paddingLeft: '4px', paddingRight: '4px' };
     }
     return {};
   }
@@ -26,8 +26,6 @@ class Button extends Component {
     let {
       isActive,
       altContent,
-      bgColor,
-      color,
       className,
       children,
       disabled,
@@ -38,7 +36,6 @@ class Button extends Component {
       style,
       tabIndex,
       svg,
-      svgSize,
       ...restProps
     } = this.props;
 
@@ -47,19 +44,17 @@ class Button extends Component {
       {};
 
     let buttonStyle = {
-      backgroundColor: bgColor,
-      color: color,
       ...paddingCompensationRule,
       ...style
     };
 
     let icon = svg ? (
-      <SVGIcon svg={svg} color={color} size={svgSize} />
+      <SVGIcon svg={svg} />
     ) : null;
 
     let buttonChildren = (children || icon) ? (
       <div
-        className={s.children}
+        className={`oc-button__children`}
         style={{ visibility: altContent ? 'hidden' : 'initial' }}
       >
         {icon}
@@ -68,11 +63,11 @@ class Button extends Component {
     ) : null;
 
     let buttonDelimiter = (buttonChildren && label) ? (
-      <div className={s.delimiter} />
+      <div className={`oc-button__delimiter`} />
     ) : null;
 
     // eslint-disable-next-line max-len
-    let buttonClassName = `${className} ${s.button} ${disabled ? s.disabled : ''} ${paper ? s.paper : '' } ${isActive ? s['button--active'] : ''}`;
+    let buttonClassName = `${className} oc-button ${disabled ? 'oc-button--disabled' : ''} ${paper ? 'oc-button--paper' : '' } ${isActive ? 'oc-button--active' : ''}`;
 
     return (
       <button
@@ -83,11 +78,11 @@ class Button extends Component {
         type="button"
       >
         <div
-          className={s.content}
+          className={`oc-button__content`}
           style={{ flexDirection: contentPosition === 'before' ? 'row-reverse' : 'row' }}
         >
           <div
-            className={s.label}
+            className={`oc-button__label`}
             style={{
               textAlign: contentPosition === 'before' ? 'right' : 'left',
               visibility: altContent ? 'hidden' : 'initial'
@@ -98,7 +93,7 @@ class Button extends Component {
           {buttonDelimiter}
           {buttonChildren}
         </div>
-        {(altContent && <div className={s.altContent}>{altContent}</div>) || null}
+        {(altContent && <div className={`oc-button__alt-content`}>{altContent}</div>) || null}
       </button>
     );
   }
@@ -107,8 +102,6 @@ class Button extends Component {
 Button.propTypes = {
   isActive: PropTypes.bool,
   altContent: PropTypes.node,
-  bgColor: PropTypes.string,
-  color: PropTypes.string,
   className: PropTypes.string,
   disabled: PropTypes.bool,
   disablePaddingCompensation: PropTypes.bool,
@@ -117,8 +110,7 @@ Button.propTypes = {
   style: PropTypes.object,
   tabIndex: PropTypes.number,
   paper: PropTypes.bool,
-  svg: PropTypes.string,
-  svgSize: PropTypes.string
+  svg: PropTypes.string
 };
 
 Button.defaultProps = {
@@ -126,7 +118,6 @@ Button.defaultProps = {
   className: '',
   disablePaddingCompensation: false,
   paper: false,
-  svgSize: '24px',
   style: {},
   tabIndex: 0
 };
