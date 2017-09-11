@@ -1,4 +1,10 @@
 
+Release 2.0.1 Mon Sep 11 2017 17:54:48 GMT+0300 (+03)
+=======================================================
+
+ - Remove uppercase for label (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 17:54:31 2017 +0300)
+ - Updating to a version to  2.0.1 (Kirill Volkovich <kirill.volkovich@jcatalog.com>, Mon Sep 11 17:50:36 2017 +0300)
+
 Release 2.0.0 Mon Sep 11 2017 17:50:24 GMT+0300 (+03)
 =======================================================
 
