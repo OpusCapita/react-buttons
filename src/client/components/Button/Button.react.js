@@ -9,15 +9,15 @@ class Button extends Component {
     this.state = { };
   }
 
-  getPaddingCompensationRule(contentPosition, svg, label, children) {
+  getPaddingCompensationClass(contentPosition, svg, label, children) {
     if (svg && label && contentPosition === 'before') {
-      return { paddingLeft: '8px' };
+      return 'oc-button--content-before';
     }
     if (svg && label && contentPosition === 'after') {
-      return { paddingRight: '8px' };
+      return 'oc-button--content-after';
     }
     if (svg && !label && !children) {
-      return { paddingLeft: '4px', paddingRight: '4px' };
+      return 'oc-button--content-empty';
     }
     return {};
   }
@@ -33,20 +33,14 @@ class Button extends Component {
       label,
       contentPosition,
       paper,
-      style,
       tabIndex,
       svg,
       ...restProps
     } = this.props;
 
-    let paddingCompensationRule = (svg && !disablePaddingCompensation) ?
-      this.getPaddingCompensationRule(contentPosition, svg, label, children) :
+    let paddingCompensationClass = (svg && !disablePaddingCompensation) ?
+      this.getPaddingCompensationClass(contentPosition, svg, label, children) :
       {};
-
-    let buttonStyle = {
-      ...paddingCompensationRule,
-      ...style
-    };
 
     let icon = svg ? (
       <SVGIcon svg={svg} />
@@ -72,8 +66,7 @@ class Button extends Component {
     return (
       <button
         { ...restProps }
-        className={buttonClassName}
-        style={buttonStyle}
+        className={`${buttonClassName} ${paddingCompensationClass}`}
         tabIndex={disabled ? '-1' : tabIndex}
         type="button"
       >
