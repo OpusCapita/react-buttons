@@ -37,7 +37,6 @@ Most useful for toolbars.
   <TitledButton 
     onClick={() => console.log('Save fired!')}
     color="#fff" 
-    bgColor="#e70" 
     label="Save" 
     paper={_scope.state.options.isPaper} 
   />
@@ -52,8 +51,6 @@ Most useful for toolbars.
     paper={_scope.state.options.isPaper} 
   />
   <TitledButton
-    bgColor="#66bb6a"
-    color="#fff"
     label="Make Order"
     svg={_scope.getIcon('shopping_cart')}
     paper={_scope.state.options.isPaper}
@@ -64,8 +61,6 @@ Most useful for toolbars.
     paper={_scope.state.options.isPaper}
   />
   <TitledButton
-    bgColor="#333"
-    color="#fff"
     contentPosition="before"
     label="Icon button"
     svg={_scope.getIcon('add_circle')}
@@ -77,26 +72,22 @@ Most useful for toolbars.
   <TitledButton
     title="Align left. Long text auto positioned"
     svg={_scope.getIcon('format_align_left')}
-    svgSize="24px"
     paper={_scope.state.options.isPaper} 
     restrictorNode={_scope.state.ref}
   />
   <TitledButton
     title="Align center"
     svg={_scope.getIcon('format_align_center')}
-    svgSize="24px"
     paper={_scope.state.options.isPaper} 
   />
   <TitledButton
     title="Align right"
     svg={_scope.getIcon('format_align_right')}
-    svgSize="24px"
     paper={_scope.state.options.isPaper} 
   />
   <TitledButton
     title="Justify content. Long text auto positioned."
     svg={_scope.getIcon('format_align_justify')}
-    svgSize="24px"
     paper={_scope.state.options.isPaper} 
     restrictorNode={_scope.state.ref}
   />

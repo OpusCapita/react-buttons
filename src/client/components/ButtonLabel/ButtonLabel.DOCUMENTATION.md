@@ -13,8 +13,6 @@ ButtonLabel is ...
 | Name                          | Type                  | Description                                                |
 | ------------------------------|:----------------------| -----------------------------------------------------------|
 | label | string | Label text |
-| color | string | Text color |
-| bgColor | string | Background color |
 
 ### Contributors
 Kirill Volkovich
