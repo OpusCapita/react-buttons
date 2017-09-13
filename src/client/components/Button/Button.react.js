@@ -18,7 +18,6 @@ class Button extends Component {
     }
     if (svg && !label && !children) {
       return 'oc-button--content-empty';
-
     }
     return '';
   }
