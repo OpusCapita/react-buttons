@@ -18,8 +18,9 @@ class Button extends Component {
     }
     if (svg && !label && !children) {
       return 'oc-button--content-empty';
+
     }
-    return {};
+    return '';
   }
 
   render() {
@@ -40,7 +41,7 @@ class Button extends Component {
 
     let paddingCompensationClass = (svg && !disablePaddingCompensation) ?
       this.getPaddingCompensationClass(contentPosition, svg, label, children) :
-      {};
+      '';
 
     let icon = svg ? (
       <SVGIcon svg={svg} />
