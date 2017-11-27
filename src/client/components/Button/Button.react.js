@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import './Button.less';
-import SVGIcon from '@opuscapita/react-svg/lib/SVGIcon';
+import { SVGIcon } from '@opuscapita/react-svg';
 
 export default
 class Button extends Component {

@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import './TitledButton.less';
 import Button from '../Button';
 import ButtonLabel from '../ButtonLabel';
-import StickyNode from '@opuscapita/react-overlays/lib/StickyNode';
+import { StickyNode } from '@opuscapita/react-overlays';
 
 export default
 class TitledButton extends Component {
