@@ -25,7 +25,7 @@ class TitledButtonSCOPE extends Component {
   }
 
   getIcon(name) {
-    return this.state.icons.find(icon => icon.name === name).svg
+    return this.state.icons.filter(icon => icon.name === name)[0].svg
   }
 
   toggleOption(name) {
