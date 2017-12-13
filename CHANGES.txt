@@ -1,4 +1,16 @@
 
+Release 4.0.0 Wed Dec 13 2017 15:53:10 GMT+0300 (+03)
+=======================================================
+
+ - Merge pull request #2 from OpusCapita/migration-react-16/#1
+    
+    Migrate to React 16 (79942dc d71a130, Kirill Volkovich <kvolkovich-sc@users.noreply.github.com>)
+ - Change index.html (baliunov <baliunov@scand.com>, Wed Dec 13 15:25:36 2017 +0300)
+ - Migrate to React 16 (baliunov <baliunov@scand.com>, Wed Dec 13 15:18:28 2017 +0300)
+ - Merge remote-tracking branch 'origin/master' (ef4eaa9 e3af31d, baliunov <baliunov@scand.com>)
+ - Change .gitignore (baliunov <baliunov@scand.com>, Wed Dec 13 14:54:18 2017 +0300)
+ - Updating to a version to  3.0.1 (Kirill Volkovich <kirill.volkovich@opuscapita.com>, Tue Nov 28 00:29:43 2017 +0300)
+
 Release 3.0.0 Tue Nov 28 2017 00:29:31 GMT+0300 (+03)
 =======================================================
 
