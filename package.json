@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@opuscapita/react-overlays": "3.0.0",
-    "@opuscapita/react-svg": "3.0.1",
+    "@opuscapita/react-svg": "4.0.0",
     "prop-types": "15.6.0"
   },
   "devDependencies": {
