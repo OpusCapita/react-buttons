@@ -1,4 +1,13 @@
 
+Release 4.0.3 Wed Apr 25 2018 08:30:39 GMT+0000 (UTC)
+=======================================================
+
+- Updated build config. (Dmitry Shienok dshienok@scand.com, 2018-04-25 11:18:49 +0300)
+- Allow both single lib entry and individual imports (GitHub 31243790+estambakio-sc@users.noreply.github.com, 2018-04-25 11:05:13 +0300)
+- Allow both single lib entry and individual imports [#4](https://github.com/OpusCapita/react-buttons/issues/4) (Egor Stambakio stambakio@scand.com, 2018-04-25 10:56:16 +0300)
+- Update package.json (GitHub kvolkovich-sc@users.noreply.github.com, 2018-01-31 13:06:40 +0300)
+- Updating to a version to  4.0.3 (Kirill Volkovich kirill.volkovich@jcatalog.com, 2017-12-18 15:06:55 +0300)
+
 Release 4.0.1 Thu Dec 14 2017 16:41:25 GMT+0300 (+03)
 =======================================================
 
