@@ -1,6 +1,6 @@
 {
   "name": "@opuscapita/react-buttons",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "Just buttons",
   "scripts": {
     "npm-build": "rimraf lib && webpack --config webpack.production.config.js",
