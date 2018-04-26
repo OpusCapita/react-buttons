@@ -8,7 +8,8 @@
     "lint": "eslint src/client",
     "start": "nodemon --watch www www/index --exec babel-node --presets es2015,stage-0,react --plugins transform-decorators-legacy",
     "npm-publish": "npm run npm-build && npm publish",
-    "publish-release": "npm run npm-publish"
+    "publish-release": "npm run npm-publish",
+    "build": "babel src/client/components -s -D -d blib"
   },
   "main": "lib/index.js",
   "files": [
@@ -42,6 +43,8 @@
     "babel-loader": "6.2.1",
     "babel-plugin-transform-decorators-legacy": "1.3.4",
     "babel-plugin-transform-object-assign": "6.8.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-preset-env": "1.6.1",
     "babel-preset-es2015": "6.3.13",
     "babel-preset-react": "6.3.13",
     "babel-preset-stage-0": "6.3.13",
