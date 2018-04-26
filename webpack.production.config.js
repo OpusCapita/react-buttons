@@ -32,9 +32,12 @@ const config = {
   ],
   externals: [
     nodeExternals({
-      modulesFromFile: true
+      modulesFromFile: true,
+      includeAbsolutePaths: true
     }),
-    /^\.{1,2}\/([\w-.]\/)*(.(?!\.(css|less)$))+$/
+    // /node_modules\/(.(?!loader))+/,
+    // /node_modules/,
+    // /^\.{1,2}\/([\w-.]\/)*$/
     // /^components/
   ],
   resolve: {
@@ -69,18 +72,18 @@ const config = {
         test: /\.md$/,
         loader: 'raw-loader'
       },
-      {
-        test: /\.(css|less)$/,
-        loader: `style!css?modules&importLoaders=1&` +
-        `localIdentName=[name]__[local]__${packageVersion}_[hash:base64:3]` +
-        `!postcss-loader!less?sourceMap`,
-        include: /\.module\.(css|less)$/
-      },
-      {
-        test: /\.(css|less)$/,
-        loader: `style!css!postcss-loader!less?sourceMap`,
-        exclude: /\.module\.(css|less)$/
-      },
+      // {
+      //   test: /\.(css|less)$/,
+      //   loader: `style!css?modules&importLoaders=1&` +
+      //   `localIdentName=[name]__[local]__${packageVersion}_[hash:base64:3]` +
+      //   `!postcss-loader!less?sourceMap`,
+      //   include: /\.module\.(css|less)$/
+      // },
+      // {
+      //   test: /\.(css|less)$/,
+      //   loader: `style!css!postcss-loader!less?sourceMap`,
+      //   exclude: /\.module\.(css|less)$/
+      // },
       {
         test: /.jsx?$/,
         loader: 'babel',
@@ -91,7 +94,7 @@ const config = {
 
         query: {
           presets: ['es2015', 'react', 'stage-0'],
-          plugins: ['transform-decorators-legacy']
+          plugins: ['transform-decorators-legacy', 'transform-import-css']
         }
       }
     ]
@@ -99,32 +102,32 @@ const config = {
 };
 ///
 
-// module.exports = [
-//   {
-//     ...config,
-//     entry: {
-//       Button: path.resolve(__dirname, './src/client/components/Button')
-//     }
-//   },
-//   {
-//     ...config,
-//     entry: {
-//       TitledButton: path.resolve(__dirname, './src/client/components/TitledButton/TitledButton.react.js')
-//     }
-//   },
-//   {
-//     ...config,
-//     entry: path.resolve(__dirname, './src/client'),
-//     output: {
-//       path: path.resolve(__dirname, 'lib'),
-//       filename: `index.js`,
-//       library: 'ReactButtons',
-//       libraryTarget: 'commonjs2'
-//     }
-//   },
-// ]
+module.exports = [
+  {
+    ...config,
+    entry: {
+      Button: path.resolve(__dirname, './src/client/components/Button')
+    }
+  },
+  {
+    ...config,
+    entry: {
+      TitledButton: path.resolve(__dirname, './src/client/components/TitledButton/TitledButton.react.js')
+    }
+  },
+  {
+    ...config,
+    entry: path.resolve(__dirname, './src/client'),
+    output: {
+      path: path.resolve(__dirname, 'lib'),
+      filename: `index.js`,
+      library: 'ReactButtons',
+      libraryTarget: 'commonjs2'
+    }
+  },
+]
 
-const dir = path.resolve(__dirname, './src/client');
-const outDir = path.resolve(__dirname, './lib');
+// const dir = path.resolve(__dirname, './src/client');
+// const outDir = path.resolve(__dirname, './lib');
 
-module.exports = generateConfig({ dir, config, outDir });
+// module.exports = generateConfig({ dir, config, outDir });
