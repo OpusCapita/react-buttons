@@ -1,4 +1,10 @@
 
+Release 4.0.4-beta2 Fri Apr 27 2018 07:02:58 GMT+0000 (UTC)
+=======================================================
+
+- Lint (Egor Stambakio stambakio@scand.com, 2018-04-27 09:56:31 +0300)
+- Babel-only build (Egor Stambakio stambakio@scand.com, 2018-04-27 09:50:49 +0300)
+
 Release 4.0.4 Wed Apr 25 2018 08:41:36 GMT+0000 (UTC)
 =======================================================
 
