@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import './TitledButton.less';
+import styles from './TitledButton.css';
 import Button from '../Button';
 import ButtonLabel from '../ButtonLabel';
 import { StickyNode } from '@opuscapita/react-overlays';

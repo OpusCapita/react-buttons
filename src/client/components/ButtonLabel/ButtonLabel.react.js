@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import './ButtonLabel.less';
+import styles from './ButtonLabel.css';
 
 export default
 class ButtonLabel extends Component {

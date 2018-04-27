@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import './Button.less';
+import styles from './Button.css';
 import { SVGIcon } from '@opuscapita/react-svg';
 
 export default
