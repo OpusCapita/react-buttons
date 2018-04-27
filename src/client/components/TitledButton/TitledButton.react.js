@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import classes from './TitledButton.css'; // eslint-disable-line no-unused-vars
+import './TitledButton.css';
 import Button from '../Button';
 import ButtonLabel from '../ButtonLabel';
 import { StickyNode } from '@opuscapita/react-overlays';
@@ -33,10 +33,10 @@ class TitledButton extends Component {
     let { isHovered } = this.state;
 
     let tips = (title && isHovered) ? (
-        <div className={classes[`oc-titled-button__tips`]}>
-          <div className={classes[`oc-titled-button__tips-helper`]}>
+        <div className={`oc-titled-button__tips`}>
+          <div className={`oc-titled-button__tips-helper`}>
             <StickyNode restrictorNode={restrictorNode}>
-              <div className={classes[`oc-title-button__tip`]}>
+              <div className={`oc-title-button__tip`}>
                 <ButtonLabel label={title} style={{ whiteSpace: 'nowrap' }} />
               </div>
             </StickyNode>
@@ -46,7 +46,7 @@ class TitledButton extends Component {
 
     return (
       <div
-        className={`${classes['oc-titled-button']} ${className}`}
+        className={`oc-titled-button ${className}`}
         onMouseEnter={this.handleMouseEnter.bind(this)}
         onMouseLeave={this.handleMouseLeave.bind(this)}
       >

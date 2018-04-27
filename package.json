@@ -9,7 +9,7 @@
     "start": "nodemon --watch www www/index --exec babel-node --presets es2015,stage-0,react --plugins transform-decorators-legacy",
     "npm-publish": "npm run npm-build && npm publish",
     "publish-release": "npm run npm-publish",
-    "npm-build": "rimraf lib && babel src/client -s -D -d lib --presets es2015,stage-0,react --plugins transform-decorators-legacy,transform-import-css --ignore less,css,SCOPE.react.js,DOCUMENTATION.md --source-maps false"
+    "npm-build": "rimraf lib && babel src/client -s -D -d lib --presets es2015,stage-0,react --plugins transform-decorators-legacy,transform-import-styles --ignore less,css,SCOPE.react.js,DOCUMENTATION.md --source-maps false"
   },
   "main": "lib/index.js",
   "files": [
@@ -42,7 +42,7 @@
     "babel-eslint": "7.1.1",
     "babel-loader": "6.2.1",
     "babel-plugin-transform-decorators-legacy": "1.3.4",
-    "babel-plugin-transform-import-css": "0.1.6",
+    "babel-plugin-transform-import-styles": "0.0.2",
     "babel-plugin-transform-object-assign": "6.8.0",
     "babel-preset-es2015": "6.3.13",
     "babel-preset-react": "6.3.13",
