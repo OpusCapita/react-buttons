@@ -1,4 +1,10 @@
 
+Release 4.0.4-beta5 Fri Apr 27 2018 07:53:41 GMT+0000 (UTC)
+=======================================================
+
+- Merge branch 'dnd-babel-build' of github.com:OpusCapita/react-buttons into dnd-babel-build (Egor Stambakio stambakio@scand.com, 2018-04-27 10:52:30 +0300)
+- ...[ci skip] (Egor Stambakio stambakio@scand.com, 2018-04-27 10:52:11 +0300)
+
 Release 4.0.4-beta4 Fri Apr 27 2018 07:41:09 GMT+0000 (UTC)
 =======================================================
 
