@@ -62,7 +62,7 @@ class Button extends Component {
     ) : null;
 
     // eslint-disable-next-line max-len
-    let buttonClassName = `${classes[className]} ${classes['oc-button']} ${disabled ? classes['oc-button--disabled'] : ''} ${paper ? classes['oc-button--paper'] : '' } ${isActive ? classes['oc-button--active'] : ''}`;
+    let buttonClassName = `${className} ${classes['oc-button']} ${disabled ? classes['oc-button--disabled'] : ''} ${paper ? classes['oc-button--paper'] : '' } ${isActive ? classes['oc-button--active'] : ''}`;
 
     return (
       <button

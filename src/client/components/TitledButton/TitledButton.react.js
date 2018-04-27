@@ -46,7 +46,7 @@ class TitledButton extends Component {
 
     return (
       <div
-        className={`${classes['oc-titled-button']} ${classes[className]}`}
+        className={`${classes['oc-titled-button']} ${className}`}
         onMouseEnter={this.handleMouseEnter.bind(this)}
         onMouseLeave={this.handleMouseLeave.bind(this)}
       >
