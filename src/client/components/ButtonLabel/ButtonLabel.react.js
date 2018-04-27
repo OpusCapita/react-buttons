@@ -14,7 +14,7 @@ class ButtonLabel extends Component {
     return (
       <div
         { ...restProps }
-        className={`oc-button-label ${className}`}
+        className={`${styles['oc-button-label']} ${styles[className]}`}
       >
         {label}
       </div>

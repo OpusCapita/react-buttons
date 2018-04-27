@@ -33,10 +33,10 @@ class TitledButton extends Component {
     let { isHovered } = this.state;
 
     let tips = (title && isHovered) ? (
-        <div className={`oc-titled-button__tips`}>
-          <div className={`oc-titled-button__tips-helper`}>
+        <div className={styles[`oc-titled-button__tips`]}>
+          <div className={styles[`oc-titled-button__tips-helper`]}>
             <StickyNode restrictorNode={restrictorNode}>
-              <div className={`oc-title-button__tip`}>
+              <div className={styles[`oc-title-button__tip`]}>
                 <ButtonLabel label={title} style={{ whiteSpace: 'nowrap' }} />
               </div>
             </StickyNode>
@@ -46,7 +46,7 @@ class TitledButton extends Component {
 
     return (
       <div
-        className={`oc-titled-button ${className}`}
+        className={`${styles['oc-titled-button']} ${styles[className]}`}
         onMouseEnter={this.handleMouseEnter.bind(this)}
         onMouseLeave={this.handleMouseLeave.bind(this)}
       >
