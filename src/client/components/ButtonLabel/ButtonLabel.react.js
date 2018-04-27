@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import styles from './ButtonLabel.css'; // eslint-disable-line no-unused-vars
+import classes from './ButtonLabel.css'; // eslint-disable-line no-unused-vars
 
 export default
 class ButtonLabel extends Component {
@@ -14,7 +14,7 @@ class ButtonLabel extends Component {
     return (
       <div
         { ...restProps }
-        className={`${styles['oc-button-label']} ${styles[className]}`}
+        className={`${classes['oc-button-label']} ${classes[className]}`}
       >
         {label}
       </div>

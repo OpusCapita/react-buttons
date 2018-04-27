@@ -12,13 +12,13 @@ class Button extends Component {
 
   getPaddingCompensationClass(contentPosition, svg, label, children) {
     if (svg && label && contentPosition === 'before') {
-      return 'oc-button--content-before';
+      return classes['oc-button--content-before'];
     }
     if (svg && label && contentPosition === 'after') {
-      return 'oc-button--content-after';
+      return classes['oc-button--content-after'];
     }
     if (svg && !label && !children) {
-      return 'oc-button--content-empty';
+      return classes['oc-button--content-empty'];
     }
     return '';
   }
@@ -49,7 +49,7 @@ class Button extends Component {
 
     let buttonChildren = (children || icon) ? (
       <div
-        className={styles[`oc-button__children`]}
+        className={classes[`oc-button__children`]}
         style={{ visibility: altContent ? 'hidden' : 'initial' }}
       >
         {icon}
@@ -58,11 +58,11 @@ class Button extends Component {
     ) : null;
 
     let buttonDelimiter = (buttonChildren && label) ? (
-      <div className={styles[`oc-button__delimiter`]} />
+      <div className={classes[`oc-button__delimiter`]} />
     ) : null;
 
     // eslint-disable-next-line max-len
-    let buttonClassName = `${styles[className]} ${styles['oc-button']} ${disabled ? styles['oc-button--disabled'] : ''} ${paper ? styles['oc-button--paper'] : '' } ${isActive ? styles['oc-button--active'] : ''}`;
+    let buttonClassName = `${classes[className]} ${classes['oc-button']} ${disabled ? classes['oc-button--disabled'] : ''} ${paper ? classes['oc-button--paper'] : '' } ${isActive ? classes['oc-button--active'] : ''}`;
 
     return (
       <button
@@ -72,11 +72,11 @@ class Button extends Component {
         type="button"
       >
         <div
-          className={styles[`oc-button__content`]}
+          className={classes[`oc-button__content`]}
           style={{ flexDirection: contentPosition === 'before' ? 'row-reverse' : 'row' }}
         >
           <div
-            className={styles[`oc-button__label`]}
+            className={classes[`oc-button__label`]}
             style={{
               textAlign: contentPosition === 'before' ? 'right' : 'left',
               visibility: altContent ? 'hidden' : 'initial'
@@ -87,7 +87,7 @@ class Button extends Component {
           {buttonDelimiter}
           {buttonChildren}
         </div>
-        {(altContent && <div className={styles[`oc-button__alt-content`]}>{altContent}</div>) || null}
+        {(altContent && <div className={classes[`oc-button__alt-content`]}>{altContent}</div>) || null}
       </button>
     );
   }
