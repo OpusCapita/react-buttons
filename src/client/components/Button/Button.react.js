@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import styles from './Button.css';
+import _ from './Button.css'; // eslint-disable-line no-unused-vars
 import { SVGIcon } from '@opuscapita/react-svg';
 
 export default

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import styles from './TitledButton.css';
+import styles from './TitledButton.css'; // eslint-disable-line no-unused-vars
 import Button from '../Button';
 import ButtonLabel from '../ButtonLabel';
 import { StickyNode } from '@opuscapita/react-overlays';
