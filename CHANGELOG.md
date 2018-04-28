@@ -1,4 +1,11 @@
 
+Release 4.0.4-beta8 Sat Apr 28 2018 13:41:36 GMT+0000 (UTC)
+=======================================================
+
+- [ci skip] (Egor Stambakio stambakio@scand.com, 2018-04-28 16:39:46 +0300)
+- Merge branch 'dnd-babel-build' of github.com:OpusCapita/react-buttons into dnd-babel-build (Egor Stambakio stambakio@scand.com, 2018-04-28 16:39:29 +0300)
+- Updated babel-plugin-transform-import-styles [ci skip] (Egor Stambakio stambakio@scand.com, 2018-04-28 16:39:12 +0300)
+
 Release 4.0.4-beta7 Fri Apr 27 2018 09:25:34 GMT+0000 (UTC)
 =======================================================
 
