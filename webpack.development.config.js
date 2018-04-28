@@ -10,7 +10,7 @@ module.exports = {
   output: {
     publicPath: '/',
     path: path.resolve(__dirname, 'lib'),
-    filename: `index.js`,
+    filename: `demo.js`,
     library: 'demopage',
     libraryTarget: 'umd'
   },
@@ -55,28 +55,8 @@ module.exports = {
   module: {
     loaders: [
       {
-        test   : /\.(png|jpg|jpeg|gif|ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-        loader : 'file-loader'
-      },
-      {
-        include: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
         test: /\.md$/,
         loader: 'raw-loader'
-      },
-      {
-        test: /\.(css|less)$/,
-        loader: `style!css?modules&importLoaders=1&` +
-        `localIdentName=[name]__[local]__${packageVersion}_[hash:base64:3]` +
-        `!postcss-loader!less?sourceMap`,
-        include: /\.module\.(css|less)$/
-      },
-      {
-        test: /\.(css|less)$/,
-        loader: `style!css!postcss-loader!less?sourceMap`,
-        exclude: /\.module\.(css|less)$/
       },
       {
         test: /.jsx?$/,
@@ -87,7 +67,10 @@ module.exports = {
         ],
         query: {
           presets: ['es2015', 'react', 'stage-0'],
-          plugins: ['transform-decorators-legacy']
+          plugins: [
+            'transform-decorators-legacy',
+            'transform-import-styles'
+          ]
         }
       }
     ]

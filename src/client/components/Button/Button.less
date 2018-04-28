@@ -1,3 +1,5 @@
+@import 'Button.h.less';
+
 .oc-button__alt-content {
   align-items: center;
   display: flex;
@@ -8,6 +10,7 @@
   top: 0;
   width: 100%;
 }
+
 .oc-button {
   align-items: center;
   border: none;
@@ -20,123 +23,103 @@
   position: relative;
   overflow: hidden;
 }
+
 .oc-button--content-before {
   padding-left: 8px;
 }
+
 .oc-button--content-after {
   padding-right: 8px;
 }
+
 .oc-button--content-empty {
   padding-left: 4px;
   padding-right: 4px;
 }
+
 .oc-button:focus {
   outline: none;
 }
+
 .oc-button:hover {
   cursor: pointer;
 }
+
 .oc-button:hover::before {
-  background-color: #ffffff;
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 2;
-  background-color: rgba(255, 255, 255, 0.36);
-  z-index: 1;
+  .oc-button__overlay--light();
 }
+
 .oc-button:hover:active::before {
   content: initial;
 }
+
 .oc-button:focus:not(.disabled)::after {
-  background-color: #ffffff;
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 2;
-  background-color: rgba(255, 255, 255, 0.36);
-  z-index: 1;
+  .oc-button__overlay--light();
 }
+
 .oc-button:focus::before {
-  background-color: #ffffff;
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 2;
+  .oc-button__overlay();
   background-color: transparent;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.32);
 }
+
 .oc-button--active::before {
-  background-color: #ffffff;
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 2;
+  .oc-button__overlay();
   background-color: transparent;
   box-shadow: none;
 }
+
 .oc-button--active::after,
 .oc-button--active:focus:not(.oc-button--disabled)::after,
 .oc-button:focus:active::after {
-  background-color: #ffffff;
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.08);
+  .oc-button__overlay--dark();
 }
+
 .oc-button__content {
   display: inline-flex;
   align-items: center;
 }
+
 .oc-button__children {
   align-items: center;
   display: inline-flex;
 }
+
 .oc-button__delimiter {
   width: 0.4em;
 }
+
 .oc-button--disabled:hover::before,
 .oc-button--disabled:focus::before,
 .oc-button--disabled:focus:active::before,
 .oc-button--disabled::before {
   content: initial;
 }
+
 .oc-button--disabled::after,
 .oc-button--disabled:focus:active::after,
 .oc-button--disabled:hover:focus:active::after {
-  background-color: #ffffff;
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 2;
-  background-color: rgba(255, 255, 255, 0.64);
+  .oc-button__overlay--lighten();
 }
+
 .oc-button__disabled:hover {
   cursor: not-allowed;
 }
+
 .oc-button__label::selection {
   background-color: transparent;
 }
+
 .oc-button--paper {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.38);
-  transition: box-shadow 80ms ease-in-out;
+  .oc-button__paper-shadow();
+}
+
+@keyframes my-animation {
+  0% { top:  100%; }
+100% { top: -500%; }
+}
+
+.my-block {
+  animation: 60s my-animation linear infinite;
+  animation-duration: 500ms;
 }
